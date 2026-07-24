@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch使用说明及技术支持 - 海上数码 | 大气层知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --red: #E60012; --blue: #00C3E3; --purple: #7C3AED; --green: #10B981;
+            --bg: #0a0a12; --bg2: #12121c; --card: rgba(255,255,255,0.04);
+            --card-hover: rgba(255,255,255,0.07); --text: #fff;
+            --text2: rgba(255,255,255,0.65); --text3: rgba(255,255,255,0.4);
+            --border: rgba(255,255,255,0.08);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.7;
+        }
+        .bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(230,0,18,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0,195,227,0.08) 0%, transparent 40%);
+        }
+        .container { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header */
+        header { padding: 48px 0 20px; text-align: center; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
+            color: var(--blue); text-decoration: none; font-size: 0.9rem; font-weight: 600;
+        }
+        .back-link:hover { color: #fff; }
+        h1 {
+            font-size: 2.4rem; font-weight: 900; letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, var(--blue) 60%, var(--red) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle { color: var(--text2); margin-top: 8px; font-size: 1rem; }
+
+        /* Top notice */
+        .notice {
+            margin: 20px 0 28px; background: rgba(230,0,18,0.1); border: 1px solid rgba(230,0,18,0.25);
+            border-radius: 12px; padding: 14px 20px; text-align: center; font-size: 0.92rem; color: var(--text2);
+        }
+        .notice strong { color: var(--red); }
+
+        /* Quick links bar */
+        .quick-links {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; justify-content: center;
+        }
+        .quick-links a {
+            padding: 8px 18px; border-radius: 20px; background: var(--card);
+            border: 1px solid var(--border); color: var(--text2); text-decoration: none;
+            font-size: 0.85rem; transition: all 0.3s;
+        }
+        .quick-links a:hover { border-color: var(--blue); color: var(--text); background: var(--card-hover); }
+        .quick-links a.highlight { background: rgba(0,195,227,0.12); border-color: rgba(0,195,227,0.3); color: var(--blue); }
+
+        /* Section */
+        .section { margin-bottom: 36px; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+            padding-bottom: 10px; border-bottom: 1px solid var(--border);
+        }
+        .section-icon {
+            width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .section-icon.know  { background: rgba(0,195,227,0.15); }
+        .section-icon.buy   { background: rgba(230,0,18,0.15); }
+        .section-icon.learn { background: rgba(124,58,237,0.15); }
+        .section-icon.soft  { background: rgba(16,185,129,0.15); }
+        .section-icon.connect { background: rgba(245,158,11,0.15); }
+        .section-icon.extra { background: rgba(255,255,255,0.08); }
+        .section-icon.game  { background: rgba(236,72,153,0.15); }
+        .section-title { font-size: 1.15rem; font-weight: 700; }
+        .section-sub { font-size: 0.8rem; color: var(--text3); margin-left: auto; }
+
+        /* Link list */
+        .link-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; }
+        .link-list li { }
+        .link-list a {
+            display: block; padding: 10px 14px; border-radius: 10px; color: var(--text2);
+            text-decoration: none; font-size: 0.9rem; transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .link-list a:hover {
+            background: var(--card-hover); border-color: var(--border); color: var(--text);
+        }
+        .link-list a .arrow { color: var(--blue); margin-left: 4px; opacity: 0; transition: opacity 0.2s; }
+        .link-list a:hover .arrow { opacity: 1; }
+        .link-tag {
+            display: inline-block; font-size: 0.7rem; padding: 1px 7px; border-radius: 8px;
+            margin-right: 6px; font-weight: 600; vertical-align: middle;
+        }
+        .link-tag.doc   { background: rgba(0,195,227,0.15); color: var(--blue); }
+        .link-tag.web   { background: rgba(124,58,237,0.15); color: var(--purple); }
+        .link-tag.video { background: rgba(230,0,18,0.15); color: var(--red); }
+        .link-tag.sheet { background: rgba(16,185,129,0.15); color: var(--green); }
+
+        /* Donate */
+        .donate {
+            text-align: center; margin: 48px 0 32px; padding: 24px;
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .donate p { color: var(--text2); font-size: 0.92rem; }
+        .donate strong { color: var(--red); }
+
+        /* Comments */
+        .comments {
+            margin: 0 0 40px; padding: 18px 20px;
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .comments .comment { color: var(--text2); font-size: 0.88rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .comments .comment:last-child { border-bottom: none; }
+
+        footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); color: var(--text3); font-size: 0.85rem; }
+        footer a { color: var(--blue); text-decoration: none; }
+        @media (max-width: 768px) { h1 { font-size: 1.6rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← 返回海上数码首页</a>
+            <h1>Switch使用说明及技术支持</h1>
+            <p class="subtitle">大气层、破解、游戏、工具等常见问题知识库 — 海上数码</p>
+        </header>
+
+        <div class="notice">
+            <strong>注意：</strong>本文提供免费资源，请不要支持任何付费行为！如果想花钱，请支持正版！
+        </div>
+
+        <div class="quick-links">
+            <a href="https://docs.qq.com/sheet/DVVV6Vk5aeHNBQnZs?tab=BB08J2" class="highlight" target="_blank">📊 最新系统软件适配报表</a>
+            <a href="https://tieba.baidu.com/p/7675810866?share=9105&fr=sharewise" target="_blank">💬 留言板</a>
+            <a href="https://docs.qq.com/doc/DVWRmWVhiQkZUYUV5" target="_blank">💻 电脑小白必学</a>
+            <a href="https://docs.qq.com/doc/DVURMaHlLTHVIbVdS" target="_blank">📖 Switch知识百科</a>
+            <a href="https://docs.qq.com/doc/DVUhqZWJSTHJ6aW5v" target="_blank">⚠️ 使用必记事项</a>
+            <a href="https://docs.qq.com/doc/DVVpQcmd1RFNpUnNL" target="_blank">🔧 Hekate界面详解</a>
+        </div>
+
+        <!-- 基础知识区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon know">📚</div>
+                <div class="section-title">基础知识区</div>
+                <div class="section-sub">如果看不懂的可网上搜索最新视频教程</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVURMaHlLTHVIbVdS" target="_blank"><span class="link-tag doc">文档</span>（必看）Switch知识百科，让你秒懂 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUhqZWJSTHJ6aW5v" target="_blank"><span class="link-tag doc">文档</span>使用Switch必记事项 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXhyUWlLTHRnQVhH" target="_blank"><span class="link-tag doc">文档</span>内存卡的选择与更换 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUFNUVJ2dU16U0hQ" target="_blank"><span class="link-tag doc">文档</span>内存卡文件详解 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVpQcmd1RFNpUnNL" target="_blank"><span class="link-tag doc">文档</span>Hekate界面详细介绍 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUhId3FuYUxDV01W" target="_blank"><span class="link-tag doc">文档</span>NS终极防BAN解读 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWxUY0hoQXFLQVZm" target="_blank"><span class="link-tag doc">文档</span>NS硬件方面的各种小技巧 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXF0b1ZGUkRaT25u" target="_blank"><span class="link-tag doc">文档</span>大气层各种资源下载网站 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW9PVE5sU0FEd0tP" target="_blank"><span class="link-tag doc">文档</span>大气层包使用说明 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 购机必看专区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon buy">🛒</div>
+                <div class="section-title">购机必看专区</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVUdNSlZtV3p2Ukp4" target="_blank"><span class="link-tag doc">文档</span>关于机子的购入与验机 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWNxS0FZZGN1anBw" target="_blank"><span class="link-tag doc">文档</span>组装机识别教程（买到马上退货！！） <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 知识专区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon learn">🧠</div>
+                <div class="section-title">知识专区</div>
+                <div class="section-sub">如果看不懂的请网上搜索最新视频教程</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVVpQcmd1RFNpUnNL" target="_blank"><span class="link-tag doc">文档</span>Hekate界面详细介绍（必须看！） <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW91eXJad3V1QWFY" target="_blank"><span class="link-tag doc">文档</span>怎么给NS安装新东西 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVZUVWJlWEpwcGhG" target="_blank"><span class="link-tag doc">文档</span>大气层各类出错问题汇总 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWZueUJ3eWhhanBh" target="_blank"><span class="link-tag doc">文档</span>游戏装不上？打不开？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW9kRW5DcFNRckxC" target="_blank"><span class="link-tag doc">文档</span>虚拟系统怎么做？虚拟系统是什么？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXR0S3B5VFFTTFVI" target="_blank"><span class="link-tag doc">文档</span>做双虚拟系统教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVdjcFVrSGJVZ2RW" target="_blank"><span class="link-tag doc">文档</span>游戏在哪下载？怎么安装？补丁和DLC怎么装？ <span class="arrow">→</span></a></li>
+                <li><a href="https://m.bilibili.com/video/BV1rqake8EB9" target="_blank"><span class="link-tag video">视频</span>用苹果Mac为Switch安装游戏 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXNOZHNBcHRuUUlt" target="_blank"><span class="link-tag doc">文档</span>怎么用金手指、打汉化补丁和MOD？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVhYRFV4SUpHcFFF" target="_blank"><span class="link-tag doc">文档</span>如何升级金手指用于高版本系统 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW1laWhJWG1JUEpM" target="_blank"><span class="link-tag doc">文档</span>怎么备份或导入存档？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXJjcEthaEZCSHNj" target="_blank"><span class="link-tag doc">文档</span>NS系统升级、大气层更新教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVV3TG5Gb1pHTGtO" target="_blank"><span class="link-tag doc">文档</span>主题的安装与出错解决方法 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUxTZWdYemdoWXFL" target="_blank"><span class="link-tag doc">文档</span>大气层配置详解 <span class="arrow">→</span></a></li>
+                <li><a href="https://www.tomodachilife.cn/?page=game-online" target="_blank"><span class="link-tag web">网站</span>NS联机平台 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/sheet/DU3BrekVRcmdFSEtW" target="_blank"><span class="link-tag sheet">表格</span>支持联机的游戏列表 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXpTRW1tR01QaXVj" target="_blank"><span class="link-tag doc">文档</span>怎么找到截图与视频？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVURyWVBPU0NCaEx3" target="_blank"><span class="link-tag doc">文档</span>批量备份游戏和存档及还原教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXVYa25GS3d4bWVn" target="_blank"><span class="link-tag doc">文档</span>Switch怎么降级？ <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- NS软件说明区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon soft">⚙️</div>
+                <div class="section-title">NS软件说明区</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVXhQeXdOUGtTQlVq" target="_blank"><span class="link-tag doc">文档</span>特斯拉介绍、超频、刷amiibo <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVRnSkhJbWdya25U" target="_blank"><span class="link-tag doc">文档</span>刷虚拟amiibo教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVU91U0RkRFBWWVpk" target="_blank"><span class="link-tag doc">文档</span>新版相册sphaira介绍 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWJLbXVwR01SQUdJ" target="_blank"><span class="link-tag doc">文档</span>蓝牙手柄连接插件MissionControl专题 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW9SVnBGb2R5emdB" target="_blank"><span class="link-tag doc">文档</span>DBI实用功能介绍 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW5zckd4VVZrVHZP" target="_blank"><span class="link-tag doc">文档</span>JKSV云存档教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXZ3dU94bUlpbVhW" target="_blank"><span class="link-tag doc">文档</span>相册里的自制软件介绍（nro） <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWxBa0NuekZJUHJ2" target="_blank"><span class="link-tag doc">文档</span>后台无线传输工具ftpsrv <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUZDdHdFZmJCS01F" target="_blank"><span class="link-tag doc">文档</span>新版特斯拉扩展功能package命令行解释 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- NS连接其他设备 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon connect">🔗</div>
+                <div class="section-title">NS连接其他设备教程</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVWRYSXhHdm5pSXJO" target="_blank"><span class="link-tag doc">文档</span>安卓手机连NS <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWJkWlhaWkRJWnpm" target="_blank"><span class="link-tag doc">文档</span>NS怎么直连电脑 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW9IUFF2VnBuaERn" target="_blank"><span class="link-tag doc">文档</span>NS使用MAC电脑教程 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- NS串流其他设备 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon connect">📡</div>
+                <div class="section-title">NS串流其他设备教程</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVWtmVlVCTmxjQXJi" target="_blank"><span class="link-tag doc">文档</span>电脑串流到NS的教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUpRSU5DWmlRY0J5" target="_blank"><span class="link-tag doc">文档</span>NS串到电脑的教程 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 刷成其他系统 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon extra">🔄</div>
+                <div class="section-title">刷成其他系统？</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVUd3T0t3dk5zaEdt" target="_blank"><span class="link-tag doc">文档</span>Switch刷Ubuntu教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUVGZWdBYVFEQmlw" target="_blank"><span class="link-tag doc">文档</span>Switch-Android11刷入教程（临时版） <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 拓展知识 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon extra">📦</div>
+                <div class="section-title">拓展知识</div>
+                <div class="section-sub">正常情况下用不上的</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://shipengliang.com/games/%e6%9d%a5%e8%87%aa%e4%bf%84%e7%bd%97%e6%96%af%e5%a4%a7%e7%a5%9e%e7%9a%84%e9%a6%88%e8%b5%a0%ef%bc%9a%e5%9f%ba%e4%ba%8e%e7%89%b9%e6%96%af%e6%8b%89%e7%9a%84switch%e7%bf%bb%e8%af%91%e6%8f%92%e4%bb%b6.html" target="_blank"><span class="link-tag web">网站</span>基于特斯拉的Switch翻译插件 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXRzVUJVamduZ0xh" target="_blank"><span class="link-tag doc">文档</span>TX/sxos无损转大气层及出错解决 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUlZVlNWY3RCTnBB" target="_blank"><span class="link-tag doc">文档</span>TX/sxos不留资料转大气层与重做大气层 <span class="arrow">→</span></a></li>
+                <li><a href="https://shipengliang.com/games/switch-%e5%a4%a7%e6%b0%94%e5%b1%82-atmosphere-%e5%a6%82%e4%bd%95%e5%a4%87%e4%bb%bd%e6%81%a2%e5%a4%8dnand.html" target="_blank"><span class="link-tag web">网站</span>备份和恢复NAND教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVVaYW9Ud2xFVUZH" target="_blank"><span class="link-tag doc">文档</span>修改用户头像教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUJ2QXZtaHpGc0NC" target="_blank"><span class="link-tag doc">文档</span>提取密钥教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWNCSWZob25KdkRF" target="_blank"><span class="link-tag doc">文档</span>怎么缩减虚拟系统大小 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXNXaUJma1N1bXBq" target="_blank"><span class="link-tag doc">文档</span>修改NS支持5G WiFi方法 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWl0dENTcVNXVlN3" target="_blank"><span class="link-tag doc">文档</span>更改大气层相册自制软件入口 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW9vaGtocHdOQ2RD" target="_blank"><span class="link-tag doc">文档</span>提取无法进入的虚拟系统存档 <span class="arrow">→</span></a></li>
+                <li><a href="https://www.bilibili.com/video/BV1ZS4y1w77n/" target="_blank"><span class="link-tag video">视频</span>手柄无线连接不上怎么重新配对 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVU13cVJFemZtRU9W" target="_blank"><span class="link-tag doc">文档</span>如何自制amiibo卡（安卓&苹果） <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUR2RnZhRktVQ0lJ" target="_blank"><span class="link-tag doc">文档</span>黑商店保姆级全教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://www.tekqart.com/thread-367780-1-2.html?_dsign=dee9530c" target="_blank"><span class="link-tag web">网站</span>Switch救砖 重建序列号证书 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVU9FSFJGa2FrSFJk" target="_blank"><span class="link-tag doc">文档</span>更换右手柄蓝牙天线增强连接能力 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVW1yeFBjR3Z0VmR0" target="_blank"><span class="link-tag doc">文档</span>Switch第三方插件代码表 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXpGSVB6UHhmVWp4" target="_blank"><span class="link-tag doc">文档</span>怎么自己创建签名补丁 <span class="arrow">→</span></a></li>
+                <li><a href="https://switchbrew.org/w/index.php?title=Title_list" target="_blank"><span class="link-tag web">网站</span>NS错误码查询 <span class="arrow">→</span></a></li>
+                <li><a href="https://nstheme.dokiss.cn/" target="_blank"><span class="link-tag web">网站</span>Switch美化图片生成器 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 无用知识专区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon extra">🗂️</div>
+                <div class="section-title">无用知识专区</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://docs.qq.com/doc/DVVlqVkx4cm9sb01o" target="_blank"><span class="link-tag doc">文档</span>从头开始的软破教程 <span class="arrow">→</span></a></li>
+                <li><a href="http://tieba.baidu.com/p/6754769858?share=9105&fr=sharewise" target="_blank"><span class="link-tag web">网站</span>续航机焊接芯片图示 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXFFdXdFTVhNYk5z" target="_blank"><span class="link-tag doc">文档</span>升级17系统进不了正版系统的救机方法 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVUpWRkh0ZW9Qd3pL" target="_blank"><span class="link-tag doc">文档</span>NS 16.0.1以下系统洗白教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXdpZ0hBSmtBbnFP" target="_blank"><span class="link-tag doc">文档</span>17系统以上洗白教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://xortroll.github.io/arc/" target="_blank"><span class="link-tag web">网站</span>大气层官方报错代码 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 游戏相关专区 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon game">🎮</div>
+                <div class="section-title">游戏相关专区</div>
+            </div>
+            <ul class="link-list">
+                <li><a href="https://pl.azalea.sh/" target="_blank"><span class="link-tag web">网站</span>宝可梦ZA在线修复金手指坏存档 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVRXY0VNUVlvRXRP" target="_blank"><span class="link-tag doc">文档</span>荒野之息存档修改教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/sheet/DSllwdUJldXpjZERh" target="_blank"><span class="link-tag sheet">表格</span>塞尔达传说：王国之泪 数据收集表 <span class="arrow">→</span></a></li>
+                <li><a href="https://gamemap.app/Zelda-TOTK" target="_blank"><span class="link-tag web">网站</span>王国之泪在线互动地图 <span class="arrow">→</span></a></li>
+                <li><a href="https://www.hyruleworks.com/?content=has_blueprint" target="_blank"><span class="link-tag web">网站</span>王国之泪蓝图分享网站 <span class="arrow">→</span></a></li>
+                <li><a href="http://www.banzhengshi.com/zelda-totk/" target="_blank"><span class="link-tag web">网站</span>塞尔达传说王国之泪存档修改网站 <span class="arrow">→</span></a></li>
+                <li><a href="https://gamebanana.com/mods/games/7617?_nPage=8" target="_blank"><span class="link-tag web">网站</span>王国之泪MOD网站（需梯子） <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWZJZEpOWEJxcndv" target="_blank"><span class="link-tag doc">文档</span>使用第三方手柄游玩NS运动的方法 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVVJhdkVDZ3VVTlhC" target="_blank"><span class="link-tag doc">文档</span>暗黑破坏神2怎么离线玩？ <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVXlUd0RWRHJrV2JB" target="_blank"><span class="link-tag doc">文档</span>怪猎曙光PCmod转换NS教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://wap.caimogu.cc/article/346870.1" target="_blank"><span class="link-tag web">网站</span>怪猎崛起制作数值与派生类MOD教程 <span class="arrow">→</span></a></li>
+                <li><a href="https://docs.qq.com/doc/DVWVIWm5XUXNvcGph" target="_blank"><span class="link-tag doc">文档</span>雪地奔驰MOD组件添加方法 <span class="arrow">→</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 用户反馈 -->
+        <div class="comments">
+            <div class="comment">💬 教程接近完美，自己调试的大气层出错就来查文档，自用接近完美</div>
+            <div class="comment">💬 已支持，多谢大佬资料整理的这么完善</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 海上数码 · <a href="index.html">58Switch.com</a> · Switch使用说明及技术支持</p>
+        <p style="margin-top:4px;">本文整理自 <a href="https://docs.qq.com/doc/DVVFMWXRLQ096RXVG" target="_blank">腾讯文档 · Switch问题自查</a></p>
+    </footer>
+</body>
+</html>
