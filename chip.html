@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硬破服务 | RP2040 主板焊接 · 系统固件维护 - 海上数码</title>
+<meta name="description" content="海上数码提供 Nintendo Switch 硬破服务：RP2040 双核超薄芯片主板焊接，0.4mm 不顶盖，支持大气层双系统（官方正版系统 + Atmosphere 自制系统），开机 3-5 秒，芯片质保二年，全程直播施工。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-mark"></span>
+            <span>海上数码<small>HAISHANG DIGITAL</small></span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="repair.html">机型维修</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="shop.html">服务商城</a></li>
+            <li><a href="resources.html">下载中心</a></li>
+            <li><a href="support.html">使用说明</a></li>
+            <li><a href="index.html#contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()" title="购物车"><span id="cartIcon"></span><span class="cart-badge">0</span></button>
+            <button class="nav-toggle" id="navToggle"><span id="navToggleIcon"></span></button>
+            <a href="shop.html" class="btn btn-primary btn-sm">立即下单</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">首页</a> / 硬破服务</div>
+        <h1>硬破服务</h1>
+        <p>树莓派 RP2040 双核超薄芯片主板焊接，0.4mm 厚度不顶盖，开机更快更稳。支持大气层双系统（官方正版系统 + Atmosphere 自制系统），全程直播施工，芯片质保二年。</p>
+        <div style="margin-top:22px;">
+            <a href="games.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;background:linear-gradient(135deg,#00b6b1 0%,#00918d 100%);color:#fff;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 8px 20px rgba(0,182,177,.35);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 26px rgba(0,182,177,.45)'" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 20px rgba(0,182,177,.35)'">🎮 自选游戏选单</a>
+            <div style="margin-top:10px;font-size:.88rem;color:var(--muted);">自选游戏选单（配套服务 7000 多款游戏自选）</div>
+        </div>
+    </div>
+</header>
+
+<!-- 硬破服务报价 -->
+<section class="section" style="padding-top:44px;">
+    <div class="container">
+        <div class="grid-3">
+            <div class="svc-card" data-reveal>
+                <div class="svc-img"><img src="images/dev-switch.jpg" alt="硬破服务 · 标准版 / 续航版" loading="lazy" onclick="openLB(this.src)"></div>
+                <div class="svc-body">
+                    <h3>硬破服务 · 标准版 / 续航版</h3>
+                    <p>全排线方案，支持国行/日版/美版/港版全版本</p>
+                    <div style="font-size:.82rem;color:var(--primary);font-weight:600;margin-top:6px;">🔧 全排线无损稳定方案焊接 · 焊接芯片 20 分钟左右</div>
+                    <div class="svc-meta">
+                        <div class="price">¥89<small> 起</small><del>¥129</del></div>
+                        <button class="btn btn-primary btn-sm" onclick="addCart('chip-std','硬破服务 · 标准版 / 续航版',89,'images/dev-switch.jpg')">加入购物车</button>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+                        <a href="https://pan.baidu.com/s/18JdEKHUjVdumxs-N3WRRIA?pwd=6n2n" target="_blank" rel="noopener" class="btn btn-outline btn-sm">▶ 改机视频</a>
+                    </div>
+                    <div style="font-size:.76rem;color:var(--muted-2);margin-top:10px;">已服务 1286 位客户 · 库存 99</div>
+                </div>
+            </div>
+            <div class="svc-card" data-reveal>
+                <div class="svc-img"><img src="images/dev-lite.jpg" alt="硬破服务 · Lite 版" loading="lazy" onclick="openLB(this.src)"></div>
+                <div class="svc-body">
+                    <h3>硬破服务 · Lite 版</h3>
+                    <p>整机焊接方案，支持全系统版本固件升级维护</p>
+                    <div style="font-size:.82rem;color:var(--primary);font-weight:600;margin-top:6px;">🔧 全排线无损稳定方案焊接 · 焊接芯片 30 分钟左右</div>
+                    <div class="svc-meta">
+                        <div class="price">¥109<small> 起</small><del>¥159</del></div>
+                        <button class="btn btn-primary btn-sm" onclick="addCart('chip-lite','硬破服务 · Lite 版',109,'images/dev-lite.jpg')">加入购物车</button>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+                        <a href="https://pan.baidu.com/s/1l0y1aN6lp23Y-yCb9R8eZQ?pwd=kgwc" target="_blank" rel="noopener" class="btn btn-outline btn-sm">▶ 改机视频</a>
+                    </div>
+                    <div style="font-size:.76rem;color:var(--muted-2);margin-top:10px;">已服务 842 位客户 · 库存 99</div>
+                </div>
+            </div>
+            <div class="svc-card" data-reveal>
+                <div class="svc-img"><img src="images/dev-oled.jpg" alt="硬破服务 · OLED 版" loading="lazy" onclick="openLB(this.src)"></div>
+                <div class="svc-body">
+                    <h3>硬破服务 · OLED 版</h3>
+                    <p>全排线挖孔方案，7 英寸大屏专用施工工艺</p>
+                    <div style="font-size:.82rem;color:var(--primary);font-weight:600;margin-top:6px;">🔧 全排线微孔稳定方案焊接 · 焊接芯片 40 分钟左右</div>
+                    <div class="svc-meta">
+                        <div class="price">¥139<small> 起</small><del>¥199</del></div>
+                        <button class="btn btn-primary btn-sm" onclick="addCart('chip-oled','硬破服务 · OLED 版',139,'images/dev-oled.jpg')">加入购物车</button>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+                        <a href="https://pan.baidu.com/s/1A3m1OG3rIBZLU4Nnkk5iyA?pwd=ti3u" target="_blank" rel="noopener" class="btn btn-outline btn-sm">▶ 改机视频</a>
+                    </div>
+                    <div style="font-size:.76rem;color:var(--muted-2);margin-top:10px;">已服务 1563 位客户 · 库存 99</div>
+                </div>
+            </div>
+        </div>
+        <div class="callout warn" style="margin-top:22px;" data-reveal>
+            <span>⚠️</span>
+            <span><b>提醒：</b>硬破服务，线上硬破需要邮寄游戏机，线下硬破上海同城可直接到店；线上寄出后请务必把快递单号发给客服，线下到店游戏机电量请至少大于 20%。</span>
+        </div>
+    </div>
+</section>
+
+<!-- 芯片介绍 -->
+<section class="section soft">
+    <div class="container">
+        <div class="section-head left" data-reveal>
+            <span class="eyebrow">The Chip</span>
+            <h2 class="section-title">树莓派 RP2040 双核超薄芯片</h2>
+        </div>
+        <div class="grid-2" style="gap:48px;align-items:center;">
+            <div data-reveal>
+                <p class="section-desc" style="margin-top:0;">从早期版本到现在的升级版，一直在迭代：优化电阻匹配、加宽信号线，开机更快更稳，支持多系统引导维护。</p>
+                <div class="mini-grid" style="margin:24px 0;">
+                    <div class="mini"><b>处理器</b><span>双核 ARM Cortex-M0+</span></div>
+                    <div class="mini"><b>主频</b><span>133 MHz</span></div>
+                    <div class="mini"><b>SRAM</b><span>264 KB</span></div>
+                    <div class="mini"><b>板载闪存</b><span>2 MB</span></div>
+                    <div class="mini"><b>GPIO</b><span>30 个接口</span></div>
+                    <div class="mini"><b>厚度</b><span>0.4mm 不顶盖</span></div>
+                </div>
+                <ul style="display:flex;flex-direction:column;gap:10px;">
+                    <li style="display:flex;gap:10px;font-size:.92rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>优化电阻匹配，加宽信号线，开机更快更稳</li>
+                    <li style="display:flex;gap:10px;font-size:.92rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>早期版本平均等 10 秒 · 升级版仅需 3-5 秒</li>
+                    <li style="display:flex;gap:10px;font-size:.92rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>支持多系统引导维护与固件升级</li>
+                    <li style="display:flex;gap:10px;font-size:.92rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>三年焊接施工经验，经手上千台，焊坏包赔</li>
+                </ul>
+            </div>
+            <div data-reveal>
+                <img src="images/chip.jpg" alt="RP2040 芯片" style="border-radius:16px;border:1px solid var(--line);" onclick="openLB(this.src)">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 大气层双系统介绍 -->
+<section class="section soft-2" id="dual">
+    <div class="container">
+        <div class="section-head left" data-reveal>
+            <span class="eyebrow">Dual System · Atmosphere</span>
+            <h2 class="section-title">大气层双系统介绍</h2>
+            <p class="section-desc">一台机器两套系统：官方正版系统（OFW）与大气层自制系统（Atmosphere / CFW）并存，开机时选择进入，两套数据相互独立、互不影响。</p>
+        </div>
+        <div class="grid-2" style="gap:24px;">
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="d1"></div>
+                <h3>官方正版系统（OFW）</h3>
+                <p>原厂固件保持纯净，未做任何改动，用于一切需要联网的官方服务。</p>
+                <ul style="display:flex;flex-direction:column;gap:9px;margin-top:14px;">
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>登录任天堂账号、eShop 购买与下载</li>
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>联机对战、官方更新、云存档同步</li>
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>正常游玩正版卡带与数字版游戏</li>
+                </ul>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle accent" id="d2"></div>
+                <h3>大气层自制系统（Atmosphere / CFW）</h3>
+                <p>运行在内存卡的独立分区上，不动机身存储，可随时删除恢复原状。</p>
+                <ul style="display:flex;flex-direction:column;gap:9px;margin-top:14px;">
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>运行 Homebrew 自制软件与各类插件</li>
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>主题、超频、截图录屏增强等个性化设置</li>
+                    <li style="display:flex;gap:10px;font-size:.9rem;color:var(--muted);"><span style="color:var(--accent-dark);">✓</span>存档备份与恢复、游戏资料整理</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mini-grid" style="margin-top:26px;">
+            <div class="mini"><b>切换方式</b><span>切换系统只需关机重启，即可重新进入启动界面显示虚拟系统和正版系统</span></div>
+            <div class="mini"><b>数据独立</b><span>两套系统各自独立存储，互不干扰</span></div>
+            <div class="mini"><b>不改动原机</b><span>自制系统装在内存卡上，主机本身不动</span></div>
+        </div>
+        <div class="callout warn" style="margin-top:24px;" data-reveal>
+            <span>⚠️</span>
+            <span><b>使用注意：</b>自制系统下请勿登录任天堂账号或联网使用官方服务；官方系统升级后需同步更新引导文件，本店提供长期维护与所需资源下载。系统软体不在质保范围，但提供更新维护服务。</span>
+        </div>
+    </div>
+</section>
+
+<!-- 服务流程 -->
+<section class="section soft">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Service Process</span>
+            <h2 class="section-title">服务流程</h2>
+            <p class="section-desc">四步搞定 · 顺丰来回 · 全程可追溯</p>
+        </div>
+        <div class="steps-list">
+            <div class="step-row" data-reveal>
+                <div class="no">1</div>
+                <div><h4>咨询下单</h4><p>联系客服确认需要硬破机型，打包好后快递给我们。</p></div>
+                <div class="step-info"><span>🎚 难度 <span class="lvl e">简单</span></span></div>
+            </div>
+            <div class="step-row" data-reveal>
+                <div class="no">2</div>
+                <div><h4>寄出告知</h4><p>寄出设备后务必告知客服快递单号，再把想要安装的游戏编号发给客服。</p></div>
+                <div class="step-info"><span>🎚 难度 <span class="lvl e">简单</span></span></div>
+            </div>
+            <div class="step-row" data-reveal>
+                <div class="no">3</div>
+                <div><h4>收货改机</h4><p>我们收到设备后登记贴标，开始改机，全程直播，改完逐项质检，默认安装最新大气层系统并安装游戏。</p></div>
+                <div class="step-info"><span>🎚 难度 <span class="lvl m">专业</span></span></div>
+            </div>
+            <div class="step-row" data-reveal>
+                <div class="no">4</div>
+                <div><h4>寄回验收</h4><p>我们改好后顺丰包邮寄回，您测试设备硬件正常后确认收货。</p></div>
+                <div class="step-info"><span>🎚 难度 <span class="lvl e">简单</span></span></div>
+            </div>
+        </div>
+        <div class="callout warn" style="margin-top:22px;">
+            <span>⚠️</span>
+            <span><b>注意事项：</b>只寄主机即可（自备内存卡请一起寄），手柄、底座等配件不用寄，避免丢失。</span>
+        </div>
+    </div>
+</section>
+
+<!-- 固件升级与安装游戏 -->
+<section class="section">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Firmware & Data</span>
+            <h2 class="section-title">固件升级与安装游戏</h2>
+            <p class="section-desc">焊接完成后，系统固件升级维护与资料安装一次搞定</p>
+        </div>
+        <div class="grid-3">
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="f1"></div>
+                <h3>系统固件升级维护</h3>
+                <p>支持国行 / 日版 / 美版 / 港版全版本的系统固件升级与调试，确认开机、读取、充电、手柄连接全部正常。</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle accent" id="f2"></div>
+                <h3>游戏与资料安装</h3>
+                <p>购买本店内存卡线上线下免费装满；自备卡免费安装 5 个游戏，超出 5 个线下到店 1 元/个，线上邮寄按订单安装。</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="f3"></div>
+                <h3>内存卡写入速度</h3>
+                <p>闪迪 A2 红金卡写入约 60MB/s，A1 卡约 20MB/s。卡速直接决定安装耗时，建议优先选 A2 卡。</p>
+            </div>
+        </div>
+        <div class="table-wrap" style="margin-top:32px;" data-reveal>
+            <table>
+                <thead><tr><th>内存卡容量</th><th>系统显示实际容量</th><th>安装游戏数量</th><th>装满参考耗时</th></tr></thead>
+                <tbody>
+                    <tr><td>128 GB</td><td>约 118 GB</td><td>约 10 个</td><td>约 1 小时</td></tr>
+                    <tr><td>256 GB</td><td>约 235 GB</td><td>约 20 个</td><td>约 2 小时</td></tr>
+                    <tr><td>512 GB</td><td>约 470 GB</td><td>约 50 个</td><td>约 4 小时</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" style="margin-top:22px;" data-reveal>
+            <span>📦</span>
+            <span>需要系统固件整合包、离线固件、工具软件？请前往 <a href="resources.html" style="color:var(--accent-dark);font-weight:700;">下载中心</a> 获取。</span>
+        </div>
+    </div>
+</section>
+
+<!-- 质保 -->
+<section class="section soft">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Warranty</span>
+            <h2 class="section-title">质保说明</h2>
+            <p class="section-desc">芯片焊接质保二年，内存卡质保五年</p>
+        </div>
+        <div class="grid-2">
+            <div class="card" data-reveal><div class="icon-circle accent" id="w3"></div><h3>芯片焊接</h3><p>焊点与芯片二年质保范围，焊接和芯片问题本店维修好包邮寄回。</p></div>
+            <div class="card" data-reveal><div class="icon-circle" id="w4"></div><h3>内存卡</h3><p>闪迪 A2 金卡提供五年质保，购买本店内存卡线上线下免费装满。</p></div>
+        </div>
+        <div class="callout warn" style="margin-top:22px;" data-reveal>
+            <span>⚠️</span>
+            <span><b>温馨提示：</b>系统、软体不在质保范围，我们会协助并提供所需系统固件与软件工具资源下载。硬件实物提供维修质保服务，系统软体提供更新维护服务。</span>
+        </div>
+    </div>
+</section>
+
+<!-- 直播施工 -->
+<section class="section">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Live</span>
+            <h2 class="section-title">直播施工 · 全程透明</h2>
+            <p class="section-desc">抖音搜索 <strong style="color:var(--primary);">「海上数码」</strong>，实时观看施工全过程</p>
+        </div>
+        <div class="card" data-reveal style="display:flex;gap:22px;align-items:center;max-width:760px;margin:0 auto;">
+            <div class="icon-circle" id="lv1" style="margin:0;flex:0 0 auto;"></div>
+            <div>
+                <h4 style="font-size:1.1rem;margin-bottom:6px;">抖音搜索「海上数码」</h4>
+                <p>🎥 施工过程实时直播，邮寄用户也能看得<strong>清清楚楚明明白白</strong>；现场用户可全程观看 / 拍摄 / 提问。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section deep">
+    <div class="container" style="text-align:center;">
+        <h2 class="section-title" style="margin-bottom:14px;">89 元起，芯片质保二年</h2>
+        <p class="section-desc" style="margin:0 auto 28px;max-width:560px;">标准版 / 续航版 89 元起，Lite 109 元起，OLED 139 元起。顺丰包邮寄回。</p>
+        <a href="shop.html" class="btn btn-light">进入服务商城下单</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="foot-grid">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark"></span><span>海上数码</span></a>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <div class="socials">
+                    <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
+                    <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
+                    <a href="javascript:copyText('13167730518')" title="复制手机">📱</a>
+                </div>
+            </div>
+            <div>
+                <h5>服务</h5>
+                <ul>
+                    <li><a href="repair.html">机型维修</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="games.html">自选游戏</a></li>
+                    <li><a href="shop.html">服务商城</a></li>
+                    <li><a href="resources.html">下载中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>维修机型</h5>
+                <ul>
+                    <li><a href="repair.html">Nintendo Switch</a></li>
+                    <li><a href="repair.html">Switch Lite</a></li>
+                    <li><a href="repair.html">Switch OLED</a></li>
+                    <li><a href="repair.html">Switch 2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>联系</h5>
+                <ul>
+                    <li>手机：131 6773 0518</li>
+                    <li>微信：haishangshuma9527</li>
+                    <li>10:00 — 22:00</li>
+                    <li>上海 · 松江九亭</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" id="mask" onclick="closeAll()"></div>
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head"><h3>我的购物车</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot">
+        <div class="total-row"><span>合计</span><b>¥<span id="cartTotal">0</span></b></div>
+        <button class="btn btn-primary btn-block" onclick="checkout()">提交订单 · 联系客服确认</button>
+    </div>
+</div>
+<div class="drawer" id="csDrawer">
+    <div class="drawer-head"><h3>联系客服</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;">工作时间 10:00 — 22:00，下单后请主动发送快递单号</p>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">💬</span>
+            <div><div class="res-name">客服微信</div><div class="res-sub">haishangshuma9527</div></div>
+            <span class="res-go" onclick="copyText('haishangshuma9527')">复制</span></div>
+        <a class="res-item" style="margin-bottom:12px;" href="https://shop310015375.taobao.com/" target="_blank" rel="noopener"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">我的淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go">打开</span></a>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">📱</span>
+            <div><div class="res-name">客服手机</div><div class="res-sub">131 6773 0518</div></div>
+            <span class="res-go" onclick="copyText('13167730518')">复制</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
+            <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
+            <span class="res-go" onclick="copyAddr()">复制</span></div>
+        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll('.brand-mark').forEach(e=>e.innerHTML = icon('game'));
+const setIcon = (id,n)=>{ const e=document.getElementById(id); if(e) e.innerHTML = icon(n); };
+setIcon('navToggleIcon','menu'); setIcon('cartIcon','cart');
+setIcon('f1','chip'); setIcon('f2','game'); setIcon('f3','sd');
+setIcon('d1','game'); setIcon('d2','chip');
+setIcon('w1','game'); setIcon('w2','tools'); setIcon('w3','shield'); setIcon('w4','sd'); setIcon('lv1','video');
+</script>
+</body>
+</html>

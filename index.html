@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海上数码 | Nintendo Switch 主机维修与硬破服务</title>
+<meta name="description" content="海上数码专注 Nintendo Switch 全系主机与手柄维修、主板硬破服务，支持国行/日版/美版/港版全型号，明码标价，芯片焊接质保二年，内存卡质保五年，支持线上邮寄与上海同城现场。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-mark" id="brandMark"></span>
+            <span>海上数码<small>HAISHANG DIGITAL</small></span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="repair.html">机型维修</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="shop.html">服务商城</a></li>
+            <li><a href="resources.html">下载中心</a></li>
+            <li><a href="support.html">使用说明</a></li>
+            <li><a href="index.html#contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()" title="购物车"><span id="cartIcon"></span><span class="cart-badge">0</span></button>
+            <button class="nav-toggle" id="navToggle"><span id="navToggleIcon"></span></button>
+            <a href="#contact" class="btn btn-primary btn-sm" id="navCta">获取报价</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <span class="hero-tag"><i></i> 上海实体门店 · 在沪三年老店</span>
+                <h1>Nintendo Switch<br>专业维修与<em>硬破服务</em></h1>
+                <p>覆盖 Switch / Switch Lite / Switch OLED / Switch 2 全系主机，以及 Joy-Con、Pro 手柄维修。明码标价、全程直播施工、芯片质保二年。</p>
+                <div class="hero-actions">
+                    <a href="repair.html" class="btn btn-primary" id="heroBtn1"></a>
+                    <a href="chip.html" class="btn btn-outline">硬破服务</a>
+                </div>
+                <div class="hero-points">
+                    <div><span id="hp1"></span>硬破 89 元起</div>
+                    <div><span id="hp2"></span>芯片质保二年</div>
+                    <div><span id="hp3"></span>顺丰包邮寄回</div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <h4>为什么选择海上数码</h4>
+                    <ul class="hero-list">
+                        <li><span id="hl1"></span><span><b>三年焊接施工经验</b>，经手上千台主机，焊坏包赔</span></li>
+                        <li><span id="hl2"></span><span><b>全程直播施工</b>，邮寄用户也能看得清清楚楚</span></li>
+                        <li><span id="hl3"></span><span><b>线下上海同城立等可取</b>，无需预约，先来后到</span></li>
+                        <li><span id="hl4"></span><span><b>线上邮寄顺丰包邮寄回</b>，签收后 1-2 天内发出</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 关于我们 -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;gap:52px;">
+            <div data-reveal>
+                <span class="eyebrow">About Us</span>
+                <h2 class="section-title">专注 Nintendo Switch 硬件维修 系统修复</h2>
+                <p class="section-desc">海上数码位于上海松江九亭，是一家以 Nintendo Switch 主机硬件维修、系统修复与主板硬破服务为主的实体门店。我们只做这一件事，所以更专业。</p>
+                <p class="section-desc">支持国行 / 日版 / 美版 / 港版全版本，标准版、续航版、Lite、OLED 均有成熟施工方案。所有维修明码标价，先报价后施工，不额外加价。</p>
+                <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+                    <a href="repair.html" class="btn btn-dark">查看维修机型</a>
+                    <a href="shop.html" class="btn btn-outline">服务与报价</a>
+                </div>
+            </div>
+            <div data-reveal>
+                <img id="aboutImg" src="images/dev-switch.jpg" alt="Nintendo Switch 主机" style="border-radius:16px;border:1px solid var(--line);transition:opacity .6s ease;min-height:280px;object-fit:cover;width:100%;" onclick="openLB(this.src)">
+            </div>
+        </div>
+
+        <div class="stats" style="margin-top:64px;">
+            <div class="stat" data-reveal><div class="num">3+</div><div class="lbl">年焊接施工经验</div></div>
+            <div class="stat" data-reveal><div class="num">1000+</div><div class="lbl">台主机施工</div></div>
+            <div class="stat" data-reveal><div class="num">100%</div><div class="lbl">直播施工</div></div>
+            <div class="stat" data-reveal><div class="num">7×12h</div><div class="lbl">在线客服</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 服务概览 -->
+<section class="section soft" id="services">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Our Services</span>
+            <h2 class="section-title">我们能为你做什么</h2>
+            <p class="section-desc">四大核心服务，覆盖主机维修、硬破服务、系统修复与游戏安装</p>
+        </div>
+        <div class="grid-4">
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="sv1"></div>
+                <h3>主机维修</h3>
+                <p>屏幕、电池、摇杆、卡槽、USB-C 接口、清灰保养等全项目维修，支持 Switch / Lite / OLED / Switch 2 与各类手柄。</p>
+                <div style="margin-top:20px;"><a href="repair.html" class="btn btn-outline btn-sm">了解机型维修</a></div>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle accent" id="sv2"></div>
+                <h3>硬破服务</h3>
+                <p>RP2040 双核超薄芯片主板焊接，0.4mm 不顶盖，开机更快更稳，支持大气层双系统与固件升级维护。</p>
+                <div style="margin-top:20px;"><a href="chip.html#dual" class="btn btn-outline btn-sm">了解硬破服务</a></div>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="sv4"></div>
+                <h3>系统修复</h3>
+                <p>开不了机、系统报错、更新失败、卡带 / 内存卡读取异常等系统级故障修复，支持官方系统与自制系统的固件修复与资料保留。</p>
+                <div style="margin-top:20px;"><a href="chip.html" class="btn btn-outline btn-sm">了解系统修复</a></div>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="sv3"></div>
+                <h3>游戏安装</h3>
+                <p>免费安装 5 个游戏；自备内存卡超出 5 个，线下到店安装一块钱一个，线上邮寄按照订单安装；购买本店内存卡线上线下免费装满。</p>
+                <div style="margin-top:20px;"><a href="shop.html" class="btn btn-outline btn-sm">进入服务商城</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 机型 -->
+<section class="section" id="devices">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Devices</span>
+            <h2 class="section-title">常见维修机型</h2>
+            <p class="section-desc">全系主机与手柄均可维修，点击查看完整机型清单与维修项目</p>
+        </div>
+        <div class="grid-4" id="devGrid"></div>
+        <div style="text-align:center;margin-top:36px;">
+            <a href="repair.html" class="btn btn-dark">查看全部 8 种机型 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- 流程 -->
+<section class="section deep" id="process">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Our Process</span>
+            <h2 class="section-title">四步完成维修</h2>
+            <p class="section-desc">从咨询到寄回，每一步都清晰可查</p>
+        </div>
+        <div class="process">
+            <div class="step" data-reveal>
+                <div class="step-no">01</div>
+                <h4>咨询与报价</h4>
+                <p>告诉我机型与故障现象，客服给出明确报价与工期，先报价后施工。</p>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-no">02</div>
+                <h4>寄修 / 到店</h4>
+                <p>外地寄修建议顺丰，寄出后把单号发客服；上海同城可直接到店，立等可取。</p>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-no">03</div>
+                <h4>施工与调试</h4>
+                <p>主板焊接、配件更换、系统调试，全程直播，现场用户可观看、拍摄、提问。</p>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-no">04</div>
+                <h4>检测与寄回</h4>
+                <p>整机复检确认开机、读取、充电、手柄连接正常后，顺丰包邮寄回。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 客户评价 -->
+<section class="section soft" id="reviews">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Testimonials</span>
+            <h2 class="section-title">客户怎么说</h2>
+            <p class="section-desc">已服务 1000+ 位玩家，以下为真实反馈</p>
+        </div>
+        <div class="grid-3" id="reviewGrid"></div>
+    </div>
+</section>
+
+<!-- 联系 -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Contact</span>
+            <h2 class="section-title">获取维修报价</h2>
+            <p class="section-desc">留下机型与故障现象，客服会尽快给出报价与方案</p>
+        </div>
+        <div class="grid-2" style="gap:32px;">
+            <div class="form-card" data-reveal>
+                <h3>在线询价</h3>
+                <p class="sub">工作日 10:00 — 22:00，通常 30 分钟内回复</p>
+                <form onsubmit="submitForm(event)">
+                    <div class="form-row">
+                        <div class="field"><label>你的称呼</label><input required placeholder="如：张先生"></div>
+                        <div class="field"><label>联系方式</label><input required placeholder="手机 / 微信"></div>
+                    </div>
+                    <div class="field">
+                        <label>设备机型</label>
+                        <select>
+                            <option>Nintendo Switch（标准版 / 续航版）</option>
+                            <option>Nintendo Switch Lite</option>
+                            <option>Nintendo Switch OLED</option>
+                            <option>Nintendo Switch 2</option>
+                            <option>Joy-Con / Joy-Con 2</option>
+                            <option>Pro Controller / Switch 2 Pro</option>
+                            <option>其他</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>故障描述</label>
+                        <textarea placeholder="简单描述故障现象，例如：摇杆漂移、充不进电、屏幕碎裂…"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">提交询价</button>
+                </form>
+            </div>
+            <div data-reveal style="display:flex;flex-direction:column;">
+                <div class="form-card" style="flex:1;display:flex;flex-direction:column;">
+                    <h3>门店信息</h3>
+                    <ul class="info-list" style="margin-top:16px;flex:1;display:flex;flex-direction:column;justify-content:space-around;">
+                        <li><span class="info-ico" id="ic1"></span><div><div class="k">客服手机</div><div class="v">131 6773 0518（孟先生）</div></div></li>
+                        <li><span class="info-ico" id="ic2"></span><div><div class="k">客服微信</div><div class="v">haishangshuma9527</div></div></li>
+                        <li><span class="info-ico" id="ic3"></span><div><div class="k">营业时间</div><div class="v">每天 10:00 — 22:00</div></div></li>
+                        <li><span class="info-ico" id="ic4"></span><div><div class="k">门店地址</div><div class="v">上海市松江区九亭镇沪松公路1399弄69号616室</div></div></li>
+                    </ul>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+                        <a href="javascript:copyAddr()" class="btn btn-outline btn-sm">复制地址</a>
+                        <a href="https://map.baidu.com/search/%E6%B2%AA%E6%9D%BE%E5%85%AC%E8%B7%AF1399%E5%BC%8469%E5%8F%B7" target="_blank" rel="noopener" class="btn btn-outline btn-sm">地图导航</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="foot-grid">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark" id="footMark"></span><span>海上数码</span></a>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <div class="socials">
+                    <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
+                    <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
+                    <a href="javascript:copyText('13167730518')" title="复制手机">📱</a>
+                </div>
+            </div>
+            <div>
+                <h5>服务</h5>
+                <ul>
+                    <li><a href="repair.html">机型维修</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="games.html">自选游戏</a></li>
+                    <li><a href="shop.html">服务商城</a></li>
+                    <li><a href="resources.html">下载中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>维修机型</h5>
+                <ul>
+                    <li><a href="repair.html">Nintendo Switch</a></li>
+                    <li><a href="repair.html">Switch Lite</a></li>
+                    <li><a href="repair.html">Switch OLED</a></li>
+                    <li><a href="repair.html">Switch 2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>联系</h5>
+                <ul>
+                    <li>手机：131 6773 0518</li>
+                    <li>微信：haishangshuma9527</li>
+                    <li>10:00 — 22:00</li>
+                    <li>上海 · 松江九亭</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" id="mask" onclick="closeAll()"></div>
+
+<div class="drawer" id="csDrawer">
+    <div class="drawer-head"><h3>联系客服</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;">工作时间 10:00 — 22:00，下单后请主动发送快递单号</p>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">💬</span>
+            <div><div class="res-name">客服微信</div><div class="res-sub">haishangshuma9527</div></div>
+            <span class="res-go" onclick="copyText('haishangshuma9527')">复制</span></div>
+        <a class="res-item" style="margin-bottom:12px;" href="https://shop310015375.taobao.com/" target="_blank" rel="noopener"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">我的淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go">打开</span></a>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">📱</span>
+            <div><div class="res-name">客服手机</div><div class="res-sub">131 6773 0518</div></div>
+            <span class="res-go" onclick="copyText('13167730518')">复制</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go" onclick="window.open('https://shop310015375.taobao.com/','_blank')">进店</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
+            <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
+            <span class="res-go" onclick="copyAddr()">复制</span></div>
+        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+/* 图标注入 */
+const setIcon = (id, n)=>{ const e = document.getElementById(id); if(e) e.innerHTML = icon(n); };
+document.querySelectorAll('.brand-mark').forEach(e=>e.innerHTML = icon('game'));
+setIcon('navToggleIcon','menu');
+setIcon('cartIcon','cart');
+setIcon('hp1','check'); setIcon('hp2','shield'); setIcon('hp3','truck');
+setIcon('hl1','check'); setIcon('hl2','video'); setIcon('hl3','pin'); setIcon('hl4','truck');
+setIcon('sv1','tools'); setIcon('sv2','chip'); setIcon('sv3','game'); setIcon('sv4','shield');
+setIcon('ic1','phone'); setIcon('ic2','mail'); setIcon('ic3','clock'); setIcon('ic4','pin'); setIcon('ic5','pin');
+
+/* 关于我们图片：动态循环替换 */
+(function(){
+    const el = document.getElementById('aboutImg');
+    if(!el) return;
+    const imgs = ['images/dev-switch.jpg','images/dev-lite.jpg','images/dev-oled.jpg','images/dev-switch2.jpg'];
+    imgs.slice(1).forEach(s=>{ const p=new Image(); p.src=s; });
+    let i = 0;
+    setInterval(()=>{
+        el.style.opacity = 0;
+        setTimeout(()=>{
+            i = (i+1) % imgs.length;
+            el.onload = ()=>{ el.style.opacity = 1; };
+            el.src = imgs[i];
+        }, 620);
+    }, 3500);
+})();
+const hb = document.getElementById('heroBtn1'); if(hb) hb.innerHTML = icon('arrow') + ' 选择我的机型';
+
+/* 机型（首页展示 4 款主机） */
+const HOME_DEV = [
+  {n:'Nintendo Switch', y:'2017 年发布', m:'HAC-001 / HAC-001(-01)', img:'images/dev-switch.jpg',
+   s:['6.2 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','4310 mAh 锂电池'],
+   r:['屏幕','电池','Micro SD 卡槽','风扇'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch'},
+  {n:'Nintendo Switch Lite', y:'2019 年发布', m:'HDH-001', img:'images/dev-lite.jpg',
+   s:['5.5 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','3570 mAh 锂电池'],
+   r:['摇杆','电池','屏幕','USB-C 接口'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_Lite'},
+  {n:'Nintendo Switch OLED', y:'2021 年发售', m:'HEG-001', img:'images/dev-oled.jpg',
+   s:['7 英寸 OLED 屏','64 GB 机身存储','底座集成 LAN 网口'],
+   r:['屏幕 OLED 组件','电池','风扇','支架铰链'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_OLED_Model'},
+  {n:'Nintendo Switch 2', y:'2025 年发售', m:'BEE-001', img:'images/dev-switch2.jpg',
+   s:['7.9 英寸 1080P 120Hz','Tegra T239 · 12 GB','256 GB UFS · 5220 mAh'],
+   r:['电池','风扇','microSD 读卡器','主板'], st:'咨询', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2'}
+];
+document.getElementById('devGrid').innerHTML = HOME_DEV.map(d=>`
+    <div class="dev-card">
+        <div class="dev-img"><img src="${d.img}" alt="${d.n}" loading="lazy" onclick="openLB(this.src)"><span class="dev-model">${d.m}</span></div>
+        <div class="dev-body">
+            <h3>${d.n}</h3><div class="dev-year">${d.y}</div>
+            <ul class="dev-spec">${d.s.map(x=>`<li>${x}</li>`).join('')}</ul>
+            <div class="dev-tags">${d.r.map(x=>`<span>${x}</span>`).join('')}</div>
+            <div class="dev-foot">
+                <a href="${d.u}" target="_blank" rel="noopener">iFixit 指南 ↗</a>
+                <span class="dev-status ${d.st==='支持'?'ok':'ask'}">${d.st==='支持'?'本店可修':'来电咨询'}</span>
+            </div>
+        </div>
+    </div>`).join('');
+
+/* 客户评价 */
+const REVIEWS = [
+  {n:'小周', r:'学生', t:'现场看着焊完的，全程直播很放心，开机 3 秒就进系统了，师傅很有耐心。', c:'linear-gradient(135deg,#03466e,#00b6b1)'},
+  {n:'阿杰', r:'外地寄修', t:'从深圳寄过去，第三天就寄回来了，顺丰包邮，包装很严实。', c:'linear-gradient(135deg,#022f4d,#03466e)'},
+  {n:'林同学', r:'老客户', t:'512G 红金卡用了快一年，速度依旧很快，有问题客服也秒回。', c:'linear-gradient(135deg,#00918d,#00b6b1)'}
+];
+document.getElementById('reviewGrid').innerHTML = REVIEWS.map(v=>`
+    <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"${v.t}"</p>
+        <div class="reviewer"><div class="avatar" style="background:${v.c}">${v.n.slice(0,1)}</div>
+        <div><b>${v.n}</b><span>${v.r}</span></div></div>
+    </div>`).join('');
+</script>
+</body>
+</html>

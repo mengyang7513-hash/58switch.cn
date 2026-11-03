@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>机型维修 | Nintendo Switch / Lite / OLED / Switch 2 - 海上数码</title>
+<meta name="description" content="海上数码提供 Nintendo Switch、Switch Lite、Switch OLED、Switch 2 主机与 Joy-Con、Pro 手柄维修，含屏幕、电池、摇杆、卡槽、USB-C 接口等全项目维修与邮寄说明。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-mark"></span>
+            <span>海上数码<small>HAISHANG DIGITAL</small></span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="repair.html">机型维修</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="shop.html">服务商城</a></li>
+            <li><a href="resources.html">下载中心</a></li>
+            <li><a href="support.html">使用说明</a></li>
+            <li><a href="index.html#contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()" title="购物车"><span id="cartIcon"></span><span class="cart-badge">0</span></button>
+            <button class="nav-toggle" id="navToggle"><span id="navToggleIcon"></span></button>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">获取报价</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">首页</a> / 机型维修</div>
+        <h1>选择你的机型</h1>
+        <p>Switch / Switch Lite / Switch OLED / Switch 2 全系主机，以及 Joy-Con、Joy-Con 2、Pro 手柄均可维修。点击「iFixit 维修指南」可查看官方拆机资料。</p>
+    </div>
+</header>
+
+<!-- 机型总览 -->
+<section class="section">
+    <div class="container">
+        <div class="section-head left" data-reveal>
+            <span class="eyebrow">All Devices</span>
+            <h2 class="section-title">全部维修机型</h2>
+        </div>
+        <div class="grid-4" id="devGrid"></div>
+    </div>
+</section>
+
+<!-- 维修项目 -->
+<section class="section soft">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Repair Items</span>
+            <h2 class="section-title">常见维修项目</h2>
+            <p class="section-desc">以下项目均可单独报价，先报价后施工，不额外加价</p>
+        </div>
+        <div class="grid-3" id="repGrid"></div>
+    </div>
+</section>
+
+<!-- 邮寄说明 -->
+<section class="section">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Mail-in / Same-day</span>
+            <h2 class="section-title">线上邮寄 / 同城到店</h2>
+            <p class="section-desc">外地寄修顺丰包邮寄回，上海同城现场立等可取</p>
+        </div>
+        <div class="grid-3">
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="m1"></div>
+                <h3>邮寄清单</h3>
+                <p>邮寄故障设备：OLED / 标准 / 续航版寄主机单平板即可，手柄单独寄手柄即可，Lite 整机寄出，系统维修需要内存卡请与机器一同寄出，并告诉我机型与故障现象。</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="m2"></div>
+                <h3>物流说明</h3>
+                <p>建议顺丰寄出，运费各付各的。本店只包邮寄回，签收后 1-2 天左右寄回。寄出后请务必把快递单号发客服。</p>
+            </div>
+            <div class="card" data-reveal>
+                <div class="icon-circle" id="m3"></div>
+                <h3>同城到店</h3>
+                <p>上海同城可现场立等可取，无需预约，先来后到顺序施工。主机请充好电（平板 + 手柄），现场可全程观看拍摄提问。</p>
+            </div>
+        </div>
+        <div style="margin-top:26px;" data-reveal>
+            <div class="callout warn">
+                <span>⚠️</span>
+                <span><b>寄修提醒：</b>包裹内请尽量放一张纸条，写明联系方式，方便到货后第一时间与你核对。系统、软体不在质保范围，硬件实物提供维修质保服务。</span>
+            </div>
+        </div>
+        <div style="margin-top:26px;" data-reveal>
+            <div class="callout">
+                <span>🚚</span>
+                <span><b>邮寄地址：</b>上海市松江区九亭镇沪松公路1399弄69号616室 · 孟先生 131 6773 0518
+                <a href="javascript:copyAddr()" style="color:var(--accent-dark);font-weight:700;margin-left:8px;">复制地址</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section deep">
+    <div class="container" style="text-align:center;">
+        <h2 class="section-title" style="margin-bottom:14px;">不确定是哪里坏了？</h2>
+        <p class="section-desc" style="margin:0 auto 28px;max-width:560px;">把故障现象告诉客服，我们会先帮你判断，再给出明确报价，检测不收费。</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html#contact" class="btn btn-light">在线询价</a>
+            <a href="shop.html" class="btn btn-primary">查看服务报价</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="foot-grid">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark"></span><span>海上数码</span></a>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <div class="socials">
+                    <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
+                    <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
+                    <a href="javascript:copyText('13167730518')" title="复制手机">📱</a>
+                </div>
+            </div>
+            <div>
+                <h5>服务</h5>
+                <ul>
+                    <li><a href="repair.html">机型维修</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="games.html">自选游戏</a></li>
+                    <li><a href="shop.html">服务商城</a></li>
+                    <li><a href="resources.html">下载中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>维修机型</h5>
+                <ul>
+                    <li><a href="repair.html">Nintendo Switch</a></li>
+                    <li><a href="repair.html">Switch Lite</a></li>
+                    <li><a href="repair.html">Switch OLED</a></li>
+                    <li><a href="repair.html">Switch 2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>联系</h5>
+                <ul>
+                    <li>手机：131 6773 0518</li>
+                    <li>微信：haishangshuma9527</li>
+                    <li>10:00 — 22:00</li>
+                    <li>上海 · 松江九亭</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" id="mask" onclick="closeAll()"></div>
+<div class="drawer" id="csDrawer">
+    <div class="drawer-head"><h3>联系客服</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;">工作时间 10:00 — 22:00，下单后请主动发送快递单号</p>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">💬</span>
+            <div><div class="res-name">客服微信</div><div class="res-sub">haishangshuma9527</div></div>
+            <span class="res-go" onclick="copyText('haishangshuma9527')">复制</span></div>
+        <a class="res-item" style="margin-bottom:12px;" href="https://shop310015375.taobao.com/" target="_blank" rel="noopener"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">我的淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go">打开</span></a>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">📱</span>
+            <div><div class="res-name">客服手机</div><div class="res-sub">131 6773 0518</div></div>
+            <span class="res-go" onclick="copyText('13167730518')">复制</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
+            <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
+            <span class="res-go" onclick="copyAddr()">复制</span></div>
+        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll('.brand-mark').forEach(e=>e.innerHTML = icon('game'));
+const setIcon = (id,n)=>{ const e=document.getElementById(id); if(e) e.innerHTML = icon(n); };
+setIcon('navToggleIcon','menu'); setIcon('cartIcon','cart');
+setIcon('m1','truck'); setIcon('m2','truck'); setIcon('m3','pin');
+
+const DEVICES = [
+  {n:'Nintendo Switch', y:'2017 年 3 月 3 日发布', m:'HAC-001 / HAC-001(-01)', img:'images/dev-switch.jpg',
+   s:['6.2 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','4310 mAh 锂电池'],
+   r:['屏幕','电池','Micro SD 卡槽','风扇','WiFi 天线'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch'},
+  {n:'Nintendo Switch Lite', y:'2019 年 9 月 20 日发布', m:'HDH-001', img:'images/dev-lite.jpg',
+   s:['5.5 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','3570 mAh 锂电池'],
+   r:['摇杆','电池','屏幕','USB-C 接口'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_Lite'},
+  {n:'Nintendo Switch OLED', y:'2021 年 10 月 8 日发售', m:'HEG-001', img:'images/dev-oled.jpg',
+   s:['7 英寸 OLED 屏','64 GB 机身存储','底座集成 LAN 网口'],
+   r:['屏幕 OLED 组件','电池','风扇','支架铰链'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_OLED_Model'},
+  {n:'Nintendo Switch 2', y:'2025 年 6 月 5 日发售', m:'BEE-001', img:'images/dev-switch2.jpg',
+   s:['7.9 英寸 1920×1080 120Hz','Tegra T239 · 12 GB LPDDR5X','256 GB UFS · 5220 mAh'],
+   r:['电池','风扇','microSD 读卡器','主板'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2'},
+  {n:'Joy-Con', y:'2017 年随 Switch 发布', m:'Joy-Con L / R', img:'images/dev-joycon.jpg',
+   s:['蓝牙 3.0 + NFC','加速度计 / 陀螺仪','滑轨式连接'],
+   r:['摇杆漂移','SL/SR 排线','电池','卡扣'], st:'支持', u:'https://zh.ifixit.com/Device/Joy-Con'},
+  {n:'Joy-Con 2', y:'2025 年随 Switch 2 发布', m:'BEE-012 / BEE-014', img:'images/dev-joycon2.jpg',
+   s:['磁吸式连接','500 mAh 锂电池','鼠标光学传感器'],
+   r:['摇杆（左右）','电池','ABXY 按键','后盖'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2_Joy-Con'},
+  {n:'Switch Pro Controller', y:'2017 年发布', m:'HAC-013', img:'images/dev-pro.jpg',
+   s:['CTR-003 · 1300 mAh','续航约 40 小时','HD 震动 / NFC / Amiibo'],
+   r:['摇杆模块','外壳','肩键','马达模块'], st:'支持', u:'https://zh.ifixit.com/Device/Switch_Pro_Controller'},
+  {n:'Switch 2 Pro Controller', y:'2025 年 6 月 5 日发布', m:'BEE-008', img:'images/dev-pro2.jpg',
+   s:['BEE-017 · 1070 mAh','续航约 40 小时','3.5mm 音频 · GL/GR 拨片'],
+   r:['摇杆模块','电池','外壳','握把拨片'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2_Pro_Controller'}
+];
+document.getElementById('devGrid').innerHTML = DEVICES.map(d=>`
+    <div class="dev-card">
+        <div class="dev-img"><img src="${d.img}" alt="${d.n}" loading="lazy" onclick="openLB(this.src)"><span class="dev-model">${d.m}</span></div>
+        <div class="dev-body">
+            <h3>${d.n}</h3><div class="dev-year">${d.y}</div>
+            <ul class="dev-spec">${d.s.map(x=>`<li>${x}</li>`).join('')}</ul>
+            <div class="dev-tags">${d.r.map(x=>`<span>${x}</span>`).join('')}</div>
+            <div class="dev-foot">
+                <a href="${d.u}" target="_blank" rel="noopener">iFixit 指南 ↗</a>
+                <span class="dev-status ${d.st==='支持'?'ok':'ask'}">${d.st==='支持'?'本店可修':'来电咨询'}</span>
+            </div>
+        </div>
+    </div>`).join('');
+
+const REPAIRS = [
+  {i:'tools', t:'屏幕更换', d:'液晶 / 触控总成更换，现场测试无坏点、无偏色、触控灵敏。', p:'¥299 起'},
+  {i:'sd',    t:'电池更换', d:'更换全新电池，解决续航短、自动关机、充不进电等问题。', p:'来电报价'},
+  {i:'game',  t:'摇杆漂移维修', d:'更换原装级摇杆模块，解决漂移、回中不准、卡顿。', p:'¥79 起'},
+  {i:'chip',  t:'USB-C 接口维修', d:'充电口松动、接触不良、无法识别底座的焊接级维修。', p:'来电报价'},
+  {i:'sd',    t:'卡槽 / 读卡器维修', d:'Micro SD 读卡失败、卡带读不出的接口级维修。', p:'来电报价'},
+  {i:'tools', t:'清灰保养', d:'拆机清灰、更换硅脂、风扇除尘，改善发热与噪音。', p:'¥69 起'}
+];
+document.getElementById('repGrid').innerHTML = REPAIRS.map(r=>`
+    <div class="card">
+        <div class="icon-circle accent">${icon(r.i)}</div>
+        <h3>${r.t}</h3>
+        <p>${r.d}</p>
+    </div>`).join('');
+</script>
+</body>
+</html>

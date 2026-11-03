@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务商城 | 主机商品 · 硬破服务 · 内存卡报价 - 海上数码</title>
+<meta name="description" content="海上数码服务商城：Nintendo Switch 续航版 / Lite / OLED / Switch 2 主机商品，硬破服务 89 元起，闪迪 A2 红金卡 128/256/512GB，明码标价，支持线上加入购物车下单。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-mark"></span>
+            <span>海上数码<small>HAISHANG DIGITAL</small></span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="repair.html">机型维修</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="shop.html">服务商城</a></li>
+            <li><a href="resources.html">下载中心</a></li>
+            <li><a href="support.html">使用说明</a></li>
+            <li><a href="index.html#contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()" title="购物车"><span id="cartIcon"></span><span class="cart-badge">0</span></button>
+            <button class="nav-toggle" id="navToggle"><span id="navToggleIcon"></span></button>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">获取报价</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">首页</a> / 服务商城</div>
+        <h1>服务商城</h1>
+        <p>明码标价，先报价后施工。加入购物车后提交订单，客服会与你确认机型与工期。</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="filters" id="filters"></div>
+        <div class="shop-bar">
+            <span class="count" id="countTxt">共 0 件服务</span>
+            <select id="sortSel" onchange="renderProducts()">
+                <option value="def">默认排序</option>
+                <option value="new">最新上架</option>
+                <option value="sales">销量优先</option>
+                <option value="asc">价格从低到高</option>
+                <option value="desc">价格从高到低</option>
+            </select>
+        </div>
+        <div class="grid-3" id="pgrid"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="foot-grid">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark"></span><span>海上数码</span></a>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <div class="socials">
+                    <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
+                    <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
+                    <a href="javascript:copyText('13167730518')" title="复制手机">📱</a>
+                </div>
+            </div>
+            <div>
+                <h5>服务</h5>
+                <ul>
+                    <li><a href="repair.html">机型维修</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="games.html">自选游戏</a></li>
+                    <li><a href="shop.html">服务商城</a></li>
+                    <li><a href="resources.html">下载中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>维修机型</h5>
+                <ul>
+                    <li><a href="repair.html">Nintendo Switch</a></li>
+                    <li><a href="repair.html">Switch Lite</a></li>
+                    <li><a href="repair.html">Switch OLED</a></li>
+                    <li><a href="repair.html">Switch 2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>联系</h5>
+                <ul>
+                    <li>手机：131 6773 0518</li>
+                    <li>微信：haishangshuma9527</li>
+                    <li>10:00 — 22:00</li>
+                    <li>上海 · 松江九亭</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" id="mask" onclick="closeAll()"></div>
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head"><h3>我的购物车</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot">
+        <div class="total-row"><span>合计</span><b>¥<span id="cartTotal">0</span></b></div>
+        <button class="btn btn-primary btn-block" onclick="checkout()">提交订单 · 联系客服确认</button>
+    </div>
+</div>
+<div class="drawer" id="csDrawer">
+    <div class="drawer-head"><h3>联系客服</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;">工作时间 10:00 — 22:00，下单后请主动发送快递单号</p>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">💬</span>
+            <div><div class="res-name">客服微信</div><div class="res-sub">haishangshuma9527</div></div>
+            <span class="res-go" onclick="copyText('haishangshuma9527')">复制</span></div>
+        <a class="res-item" style="margin-bottom:12px;" href="https://shop310015375.taobao.com/" target="_blank" rel="noopener"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">我的淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go">打开</span></a>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">📱</span>
+            <div><div class="res-name">客服手机</div><div class="res-sub">131 6773 0518</div></div>
+            <span class="res-go" onclick="copyText('13167730518')">复制</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
+            <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
+            <span class="res-go" onclick="copyAddr()">复制</span></div>
+        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll('.brand-mark').forEach(e=>e.innerHTML = icon('game'));
+document.getElementById('navToggleIcon').innerHTML = icon('menu');
+document.getElementById('cartIcon').innerHTML = icon('cart');
+
+const CATS = [
+    {k:'all', n:'全部'},
+    {k:'repair', n:'主机商品'},
+    {k:'chip', n:'硬破服务'},
+    {k:'card', n:'内存卡'}
+];
+const PRODUCTS = [
+    {id:'host-v2', cat:'repair', name:'Nintendo Switch 续航版', desc:'6.2 英寸屏 · HAC-001(-01) · 现机现货，成色与配件以实物为准', price:null, old:0, sales:216, stock:5, tag:'hot', img:'images/dev-switch.jpg'},
+    {id:'host-lite', cat:'repair', name:'Nintendo Switch Lite', desc:'5.5 英寸屏 · HDH-001 · 掌机一体机身，多种配色可选', price:null, old:0, sales:158, stock:6, tag:'', img:'images/dev-lite.jpg'},
+    {id:'host-oled', cat:'repair', name:'Nintendo Switch OLED', desc:'7 英寸 OLED 屏 · HEG-001 · 64GB 机身存储，底座带 LAN 网口', price:null, old:0, sales:174, stock:4, tag:'hot', img:'images/dev-oled.jpg'},
+    {id:'host-sw2', cat:'repair', name:'Nintendo Switch 2', desc:'7.9 英寸 1080P 120Hz · 256GB · 支持磁吸 Joy-Con 2', price:null, old:0, sales:96, stock:3, tag:'new', img:'images/dev-switch2.jpg'},
+    {id:'chip-std', cat:'chip', name:'硬破服务 · 标准版 / 续航版', desc:'全排线方案，支持国行/日版/美版/港版全版本', price:89, old:129, suffix:'起', sales:1286, stock:99, tag:'hot', img:'images/dev-switch.jpg'},
+    {id:'chip-lite', cat:'chip', name:'硬破服务 · Lite 版', desc:'整机焊接方案，支持全系统版本固件升级维护', price:109, old:159, suffix:'起', sales:842, stock:99, tag:'new', img:'images/dev-lite.jpg'},
+    {id:'chip-oled', cat:'chip', name:'硬破服务 · OLED 版', desc:'全排线挖孔方案，7 英寸大屏专用施工工艺', price:139, old:199, suffix:'起', sales:1563, stock:99, tag:'hot', img:'images/dev-oled.jpg'},
+    {id:'card-128', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 128GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:239, old:299, sales:2140, stock:56, tag:'', img:'images/card-128.png'},
+    {id:'card-256', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 256GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:359, old:429, sales:1876, stock:38, tag:'hot', img:'images/card-256.png'},
+    {id:'card-512', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 512GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:659, old:799, sales:934, stock:12, tag:'', img:'images/card-512.png'}
+];
+
+let curCat = 'all';
+function renderFilters(){
+    document.getElementById('filters').innerHTML =
+        CATS.map(c=>`<button class="chip${c.k===curCat?' on':''}" onclick="setCat('${c.k}')">${c.n}</button>`).join('');
+}
+function setCat(k){ curCat = k; renderFilters(); renderProducts(); }
+function renderProducts(){
+    const sort = document.getElementById('sortSel').value;
+    let list = PRODUCTS.filter(p=>curCat==='all'||p.cat===curCat);
+const pv = p => p.price===null ? Infinity : p.price;
+    if(sort==='asc') list = list.slice().sort((a,b)=>pv(a)-pv(b));
+    if(sort==='desc') list = list.slice().sort((a,b)=>pv(b)-pv(a));
+    if(sort==='sales') list = list.slice().sort((a,b)=>b.sales-a.sales);
+    if(sort==='new') list = list.slice().reverse();
+    document.getElementById('countTxt').textContent = `共 ${list.length} 件服务`;
+    document.getElementById('pgrid').innerHTML = list.map(p=>{
+        const out = p.stock<=0;
+        return `<div class="svc-card">
+            <div class="svc-img">${p.cat==='chip'?`<span style="position:absolute;top:10px;left:10px;z-index:2;background:linear-gradient(135deg,#00b6b1,#00918d);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(0,145,141,.35);">🚚 需邮寄</span>`:''}<img src="${p.img}" alt="${p.name}" loading="lazy" onclick="openLB(this.src)"></div>
+            <div class="svc-body">
+                <h3>${p.name}</h3>
+                <p>${p.desc}</p>
+                <div class="svc-meta">
+                    ${p.price===null
+                        ? `<div class="price" style="font-size:1.02rem;color:var(--primary);">价格咨询客服</div>`
+                        : `<div class="price">¥${p.price}${p.suffix?`<small> ${p.suffix}</small>`:''}<del>¥${p.old}</del></div>`}
+                    <button class="btn ${out?'btn-outline':'btn-primary'} btn-sm" ${out?'disabled':''}
+                        onclick="${p.price===null?'openCS()':`addCart('${p.id}','${p.name}',${p.price},'${p.img}')`}">${out?'预约':(p.price===null?'咨询客服':'加入购物车')}</button>
+                </div>
+                <div style="font-size:.76rem;color:var(--muted-2);margin-top:10px;">已服务 ${p.sales} 位客户 · ${out?'预约中':'库存 '+p.stock}</div>
+            </div>
+        </div>`;
+    }).join('');
+}
+renderFilters(); renderProducts();
+</script>
+</body>
+</html>

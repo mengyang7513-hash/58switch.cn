@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>下载中心 | 大气层系统整合包 · 工具软件 - 海上数码</title>
+<meta name="description" content="海上数码下载中心：大气层系统整合包、官方离线固件、硬破使用教程、电脑软件工具、模拟器整合集等，百度网盘提取码一键复制。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-mark"></span>
+            <span>海上数码<small>HAISHANG DIGITAL</small></span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="repair.html">机型维修</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="shop.html">服务商城</a></li>
+            <li><a href="resources.html">下载中心</a></li>
+            <li><a href="support.html">使用说明</a></li>
+            <li><a href="index.html#contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()" title="购物车"><span id="cartIcon"></span><span class="cart-badge">0</span></button>
+            <button class="nav-toggle" id="navToggle"><span id="navToggleIcon"></span></button>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">获取报价</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">首页</a> / 下载中心</div>
+        <h1>下载中心</h1>
+        <p>大气层系统整合包、官方离线固件、硬破使用教程、电脑软件工具等全套资源。右键卡片可直接复制提取码。</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head left" data-reveal>
+            <span class="eyebrow">Downloads</span>
+            <h2 class="section-title">全部资源</h2>
+        </div>
+        <div class="grid-2" id="resGrid" style="gap:14px;"></div>
+
+        <div class="callout" style="margin-top:34px;" data-reveal>
+            <span>📦</span>
+            <span><b>下载说明：</b>资源存放于百度网盘，点击卡片跳转后输入提取码即可。<b>右键卡片</b>可一键复制提取码。</span>
+        </div>
+    </div>
+</section>
+
+<section class="section soft">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <span class="eyebrow">Need Help</span>
+            <h2 class="section-title">找不到需要的资源？</h2>
+            <p class="section-desc">把你的机型和需求发给客服，我们会直接给你对应的链接与教程</p>
+        </div>
+        <div style="text-align:center;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html#contact" class="btn btn-dark">联系客服</a>
+            <button class="btn btn-outline" onclick="copyText('haishangshuma9527')">复制客服微信</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="foot-grid">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark"></span><span>海上数码</span></a>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <div class="socials">
+                    <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
+                    <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
+                    <a href="javascript:copyText('13167730518')" title="复制手机">📱</a>
+                </div>
+            </div>
+            <div>
+                <h5>服务</h5>
+                <ul>
+                    <li><a href="repair.html">机型维修</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
+            <li><a href="games.html">自选游戏</a></li>
+                    <li><a href="shop.html">服务商城</a></li>
+                    <li><a href="resources.html">下载中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>维修机型</h5>
+                <ul>
+                    <li><a href="repair.html">Nintendo Switch</a></li>
+                    <li><a href="repair.html">Switch Lite</a></li>
+                    <li><a href="repair.html">Switch OLED</a></li>
+                    <li><a href="repair.html">Switch 2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>联系</h5>
+                <ul>
+                    <li>手机：131 6773 0518</li>
+                    <li>微信：haishangshuma9527</li>
+                    <li>10:00 — 22:00</li>
+                    <li>上海 · 松江九亭</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" id="mask" onclick="closeAll()"></div>
+<div class="drawer" id="csDrawer">
+    <div class="drawer-head"><h3>联系客服</h3><button class="drawer-close" onclick="closeAll()">✕</button></div>
+    <div class="drawer-body">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;">工作时间 10:00 — 22:00，下单后请主动发送快递单号</p>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">💬</span>
+            <div><div class="res-name">客服微信</div><div class="res-sub">haishangshuma9527</div></div>
+            <span class="res-go" onclick="copyText('haishangshuma9527')">复制</span></div>
+        <a class="res-item" style="margin-bottom:12px;" href="https://shop310015375.taobao.com/" target="_blank" rel="noopener"><span class="res-ico" style="background:var(--primary)">🛍️</span>
+            <div><div class="res-name">我的淘宝店铺</div><div class="res-sub">shop310015375.taobao.com</div></div>
+            <span class="res-go">打开</span></a>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">📱</span>
+            <div><div class="res-name">客服手机</div><div class="res-sub">131 6773 0518</div></div>
+            <span class="res-go" onclick="copyText('13167730518')">复制</span></div>
+        <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
+            <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
+            <span class="res-go" onclick="copyAddr()">复制</span></div>
+        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll('.brand-mark').forEach(e=>e.innerHTML = icon('game'));
+document.getElementById('navToggleIcon').innerHTML = icon('menu');
+document.getElementById('cartIcon').innerHTML = icon('cart');
+
+const RES = [
+    {name:'游戏资源下载站', note:'www.58switch.com', icon:'game', color:'#03466e', link:'https://www.58switch.com', ext:true},
+    {name:'大气层系统整合包', code:'yhnc', icon:'chip', color:'#03466e', link:'https://pan.baidu.com/s/1nmnJNf_StE0leAtvExa-lg?pwd=yhnc'},
+    {name:'官方离线固件', code:'px62', icon:'down', color:'#00918d', link:'https://pan.baidu.com/s/12JDxpfc4jBsdHSk6HvmF_w?pwd=px62'},
+    {name:'硬破使用教程', code:'8dg3', icon:'down', color:'#00918d', link:'https://pan.baidu.com/s/1pS2WUYbfnlusN0XkKHt8Bw?pwd=8dg3'},
+    {name:'电脑软件工具', code:'bh9j', icon:'tools', color:'#022f4d', link:'https://pan.baidu.com/s/11GnnDo0X28P6fiIoIjgGuw?pwd=bh9j'},
+    {name:'模拟器整合集', code:'eqc6', icon:'game', color:'#03466e', link:'https://pan.baidu.com/s/15QJjZ9sJNtj6KMyn3EfqeA?pwd=eqc6'},
+    {name:'特斯拉阿咪波', code:'ncsy', icon:'chip', color:'#00918d', link:'https://pan.baidu.com/s/1b8cCvmSfY-cFtdeJ9I1LFw?pwd=ncsy'},
+    {name:'安卓卡刷机包', code:'kkt4', icon:'sd', color:'#00b6b1', link:'https://pan.baidu.com/s/1CiM0IIU13hcZIMwC-iNdBw?pwd=kkt4'}
+];
+const rg = document.getElementById('resGrid');
+RES.forEach(r=>{
+    const a = document.createElement('a');
+    a.href = r.link; a.target = '_blank'; a.rel = 'noopener'; a.className = 'res-item';
+    const meta = r.ext ? `<div class="res-sub">${r.note}</div>` : `<div class="res-sub">提取码: ${r.code}</div>`;
+    a.innerHTML = `<span class="res-ico" style="background:${r.color}">${icon(r.icon)}</span>
+        <div><div class="res-name">${r.name}</div>${meta}</div>
+        <span class="res-go">${r.ext?'↗':'→'}</span>`;
+    rg.appendChild(a);
+});
+document.addEventListener('contextmenu', e=>{
+    const item = e.target.closest('.res-item');
+    if(item){
+        const c = item.querySelector('.res-sub');
+        if(c && c.textContent.indexOf('提取码') === 0){ e.preventDefault(); copyText(c.textContent.replace('提取码: ','')); }
+    }
+});
+</script>
+</body>
+</html>
