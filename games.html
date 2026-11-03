@@ -1617,11 +1617,14 @@
         });
 
         // ===== Init =====
-        // 异步加载游戏数据（gzip 后 229KB，不阻塞首屏渲染）
+        // 两段式加载：先拉 4KB 首屏数据（前100款热门）秒开，全量 6807 款后台续载
+        let fullDataLoaded = false;
         (async function init() {
             const body = document.getElementById('gameListBody');
+
+            // 第一批：前 100 款（gzip 仅 4KB，几乎瞬时）
             try {
-                const res = await fetch('data/games.json');
+                const res = await fetch('data/games-first.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 games = await res.json();
             } catch (e) {
@@ -1633,6 +1636,21 @@
             if (sk) sk.remove();
             sortGames();
             updateStats();
+
+            // 第二批：全量数据后台加载，到达后无缝合并（保持已选/搜索/滚动位置）
+            try {
+                const res2 = await fetch('data/games.json');
+                if (!res2.ok) throw new Error('HTTP ' + res2.status);
+                const all = await res2.json();
+                if (fullDataLoaded || all.length <= games.length) return;
+                fullDataLoaded = true;
+                games = all;
+                games.forEach(g => { if (!gameMap.has(g.id)) gameMap.set(g.id, g); });
+                // keepLimit=true：保持当前已渲染批次与滚动位置，不打断浏览
+                sortGames(true);
+            } catch (e) {
+                // 首批已在展示，全量失败不打断使用；列表底部提示会显示剩余数量
+            }
         })();
     </script>
 <script src="assets/app.js"></script>
