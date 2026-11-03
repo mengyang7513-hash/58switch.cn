@@ -130,7 +130,7 @@
         <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
             <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
             <span class="res-go" onclick="copyAddr()">复制</span></div>
-        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+        <img src="images/wechat-qr.webp" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
     </div>
 </div>
 
@@ -147,16 +147,16 @@ const CATS = [
     {k:'card', n:'内存卡'}
 ];
 const PRODUCTS = [
-    {id:'host-v2', cat:'repair', name:'Nintendo Switch 续航版', desc:'6.2 英寸屏 · HAC-001(-01) · 现机现货，成色与配件以实物为准', price:null, old:0, sales:216, stock:5, tag:'hot', img:'images/dev-switch.jpg'},
-    {id:'host-lite', cat:'repair', name:'Nintendo Switch Lite', desc:'5.5 英寸屏 · HDH-001 · 掌机一体机身，多种配色可选', price:null, old:0, sales:158, stock:6, tag:'', img:'images/dev-lite.jpg'},
-    {id:'host-oled', cat:'repair', name:'Nintendo Switch OLED', desc:'7 英寸 OLED 屏 · HEG-001 · 64GB 机身存储，底座带 LAN 网口', price:null, old:0, sales:174, stock:4, tag:'hot', img:'images/dev-oled.jpg'},
-    {id:'host-sw2', cat:'repair', name:'Nintendo Switch 2', desc:'7.9 英寸 1080P 120Hz · 256GB · 支持磁吸 Joy-Con 2', price:null, old:0, sales:96, stock:3, tag:'new', img:'images/dev-switch2.jpg'},
-    {id:'chip-std', cat:'chip', name:'硬破服务 · 标准版 / 续航版', desc:'全排线方案，支持国行/日版/美版/港版全版本', price:89, old:129, suffix:'起', sales:1286, stock:99, tag:'hot', img:'images/dev-switch.jpg'},
-    {id:'chip-lite', cat:'chip', name:'硬破服务 · Lite 版', desc:'整机焊接方案，支持全系统版本固件升级维护', price:109, old:159, suffix:'起', sales:842, stock:99, tag:'new', img:'images/dev-lite.jpg'},
-    {id:'chip-oled', cat:'chip', name:'硬破服务 · OLED 版', desc:'全排线挖孔方案，7 英寸大屏专用施工工艺', price:139, old:199, suffix:'起', sales:1563, stock:99, tag:'hot', img:'images/dev-oled.jpg'},
-    {id:'card-128', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 128GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:239, old:299, sales:2140, stock:56, tag:'', img:'images/card-128.png'},
-    {id:'card-256', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 256GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:359, old:429, sales:1876, stock:38, tag:'hot', img:'images/card-256.png'},
-    {id:'card-512', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 512GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:659, old:799, sales:934, stock:12, tag:'', img:'images/card-512.png'}
+    {id:'host-v2', cat:'repair', name:'Nintendo Switch 续航版', desc:'6.2 英寸屏 · HAC-001(-01) · 现机现货，成色与配件以实物为准', price:null, old:0, sales:216, stock:5, tag:'hot', img:'images/dev-switch.webp'},
+    {id:'host-lite', cat:'repair', name:'Nintendo Switch Lite', desc:'5.5 英寸屏 · HDH-001 · 掌机一体机身，多种配色可选', price:null, old:0, sales:158, stock:6, tag:'', img:'images/dev-lite.webp'},
+    {id:'host-oled', cat:'repair', name:'Nintendo Switch OLED', desc:'7 英寸 OLED 屏 · HEG-001 · 64GB 机身存储，底座带 LAN 网口', price:null, old:0, sales:174, stock:4, tag:'hot', img:'images/dev-oled.webp'},
+    {id:'host-sw2', cat:'repair', name:'Nintendo Switch 2', desc:'7.9 英寸 1080P 120Hz · 256GB · 支持磁吸 Joy-Con 2', price:null, old:0, sales:96, stock:3, tag:'new', img:'images/dev-switch2.webp'},
+    {id:'chip-std', cat:'chip', name:'硬破服务 · 标准版 / 续航版', desc:'全排线方案，支持国行/日版/美版/港版全版本', price:89, old:129, suffix:'起', sales:1286, stock:99, tag:'hot', img:'images/dev-switch.webp'},
+    {id:'chip-lite', cat:'chip', name:'硬破服务 · Lite 版', desc:'整机焊接方案，支持全系统版本固件升级维护', price:109, old:159, suffix:'起', sales:842, stock:99, tag:'new', img:'images/dev-lite.webp'},
+    {id:'chip-oled', cat:'chip', name:'硬破服务 · OLED 版', desc:'全排线挖孔方案，7 英寸大屏专用施工工艺', price:139, old:199, suffix:'起', sales:1563, stock:99, tag:'hot', img:'images/dev-oled.webp'},
+    {id:'card-128', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 128GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:239, old:299, sales:2140, stock:56, tag:'', img:'images/card-128.webp'},
+    {id:'card-256', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 256GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:359, old:429, sales:1876, stock:38, tag:'hot', img:'images/card-256.webp'},
+    {id:'card-512', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 512GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:659, old:799, sales:934, stock:12, tag:'', img:'images/card-512.webp'}
 ];
 
 let curCat = 'all';

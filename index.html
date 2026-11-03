@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div data-reveal>
-                <img id="aboutImg" src="images/dev-switch.jpg" alt="Nintendo Switch 主机" style="border-radius:16px;border:1px solid var(--line);transition:opacity .6s ease;min-height:280px;object-fit:cover;width:100%;" onclick="openLB(this.src)">
+                <img id="aboutImg" src="images/dev-switch.webp" alt="Nintendo Switch 主机" style="border-radius:16px;border:1px solid var(--line);transition:opacity .6s ease;min-height:280px;object-fit:cover;width:100%;" onclick="openLB(this.src)">
             </div>
         </div>
 
@@ -316,7 +316,7 @@
         <div class="res-item" style="margin-bottom:12px;"><span class="res-ico" style="background:var(--primary)">🚚</span>
             <div><div class="res-name">邮寄地址</div><div class="res-sub">沪松公路1399弄69号616室</div></div>
             <span class="res-go" onclick="copyAddr()">复制</span></div>
-        <img src="images/wechat-qr.jpg" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
+        <img src="images/wechat-qr.webp" alt="微信客服" style="width:150px;border-radius:12px;border:1px solid var(--line);margin-top:8px;" onclick="openLB(this.src)">
     </div>
 </div>
 
@@ -336,7 +336,7 @@ setIcon('ic1','phone'); setIcon('ic2','mail'); setIcon('ic3','clock'); setIcon('
 (function(){
     const el = document.getElementById('aboutImg');
     if(!el) return;
-    const imgs = ['images/dev-switch.jpg','images/dev-lite.jpg','images/dev-oled.jpg','images/dev-switch2.jpg'];
+    const imgs = ['images/dev-switch.webp','images/dev-lite.webp','images/dev-oled.webp','images/dev-switch2.webp'];
     imgs.slice(1).forEach(s=>{ const p=new Image(); p.src=s; });
     let i = 0;
     setInterval(()=>{
@@ -352,18 +352,18 @@ const hb = document.getElementById('heroBtn1'); if(hb) hb.innerHTML = icon('arro
 
 /* 机型（首页展示 4 款主机） */
 const HOME_DEV = [
-  {n:'Nintendo Switch', y:'2017 年发布', m:'HAC-001 / HAC-001(-01)', img:'images/dev-switch.jpg',
+  {n:'Nintendo Switch', y:'2017 年发布', m:'HAC-001 / HAC-001(-01)', img:'images/dev-switch.webp',
    s:['6.2 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','4310 mAh 锂电池'],
    r:['屏幕','电池','Micro SD 卡槽','风扇'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch'},
-  {n:'Nintendo Switch Lite', y:'2019 年发布', m:'HDH-001', img:'images/dev-lite.jpg',
+  {n:'Nintendo Switch Lite', y:'2019 年发布', m:'HDH-001', img:'images/dev-lite.webp',
    s:['5.5 英寸 1280×720 LCD','NVIDIA 定制 Tegra · 32 GB','3570 mAh 锂电池'],
    r:['摇杆','电池','屏幕','USB-C 接口'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_Lite'},
-  {n:'Nintendo Switch OLED', y:'2021 年发售', m:'HEG-001', img:'images/dev-oled.jpg',
+  {n:'Nintendo Switch OLED', y:'2021 年发售', m:'HEG-001', img:'images/dev-oled.webp',
    s:['7 英寸 OLED 屏','64 GB 机身存储','底座集成 LAN 网口'],
    r:['屏幕 OLED 组件','电池','风扇','支架铰链'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_OLED_Model'},
-  {n:'Nintendo Switch 2', y:'2025 年发售', m:'BEE-001', img:'images/dev-switch2.jpg',
+  {n:'Nintendo Switch 2', y:'2025 年发售', m:'BEE-001', img:'images/dev-switch2.webp',
    s:['7.9 英寸 1080P 120Hz','Tegra T239 · 12 GB','256 GB UFS · 5220 mAh'],
-   r:['电池','风扇','microSD 读卡器','主板'], st:'咨询', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2'}
+   r:['电池','风扇','microSD 读卡器','主板'], st:'支持', u:'https://zh.ifixit.com/Device/Nintendo_Switch_2'}
 ];
 document.getElementById('devGrid').innerHTML = HOME_DEV.map(d=>`
     <div class="dev-card">
