@@ -93,7 +93,7 @@ function renderCart(){
     const keys = Object.keys(cart);
     const totalEl = document.getElementById('cartTotal');
     if(!keys.length){
-        body.innerHTML = '<div class="empty">🛒 购物车还是空的<br>去「服务商城」挑一挑吧</div>';
+        body.innerHTML = '<div class="empty">🛒 购物车还是空的<br>去「商城服务」挑一挑吧</div>';
         if(totalEl) totalEl.textContent = '0';
         return;
     }
