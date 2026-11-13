@@ -407,10 +407,12 @@ tbody td:first-child{ color:var(--text); font-weight:700; }
 /* ---------- 双系统界面预览 ---------- */
 .atm-gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; }
 .atm-shot{ margin:0; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden; cursor:zoom-in; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    overflow:hidden; cursor:zoom-in; display:flex; flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .atm-shot:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(3,70,110,.12); border-color:var(--accent); }
 .atm-shot img{ display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--soft-2); }
-.atm-shot figcaption{ padding:11px 12px; font-size:.82rem; font-weight:700; color:var(--primary);
+.atm-shot figcaption{ flex:1; display:flex; align-items:center; justify-content:center;
+    padding:11px 12px; font-size:.82rem; font-weight:700; color:var(--primary); line-height:1.45;
     text-align:center; border-top:1px solid var(--line); background:#fbfdfe; }
 @media (max-width:991px){ .atm-gallery{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:640px){ .atm-gallery{ grid-template-columns:1fr; } }
