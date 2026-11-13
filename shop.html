@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商城服务 | 主机商品 · 改机服务 · 内存卡报价 - 海上数码</title>
-<meta name="description" content="海上数码商城服务：Nintendo Switch 续航版 / Lite / OLED / Switch 2 主机商品，改机服务 89 元起，闪迪 A2 红金卡 128/256/512GB，明码标价，支持线上加入购物车下单。">
+<title>商城服务 | 主机商品 · 硬破服务 · 内存卡报价 - 海上数码</title>
+<meta name="description" content="海上数码商城服务：Nintendo Switch 续航版 / Lite / OLED / Switch 2 主机商品，硬破服务 89 元起，闪迪 A2 红金卡 128/256/512GB，明码标价，支持线上加入购物车下单。">
 <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
@@ -18,7 +18,7 @@
         <ul class="nav-menu">
             <li><a href="index.html">首页</a></li>
             <li><a href="repair.html">维修服务</a></li>
-            <li><a href="chip.html">改机服务</a></li>
+            <li><a href="chip.html">硬破服务</a></li>
             <li><a href="shop.html">商城服务</a></li>
             <li><a href="resources.html">下载中心</a></li>
             <li><a href="support.html">使用说明</a></li>
@@ -62,7 +62,7 @@
         <div class="foot-grid">
             <div>
                 <a href="index.html" class="brand"><span class="brand-mark"></span><span>海上数码</span></a>
-                <p>Nintendo Switch 主机维修与改机服务。在沪三年实体门店，明码标价，全程直播施工。</p>
+                <p>Nintendo Switch 主机维修与硬破服务。在沪三年实体门店，明码标价，全程直播施工。</p>
                 <div class="socials">
                     <a href="https://shop310015375.taobao.com/" target="_blank" rel="noopener" title="淘宝店铺">🛍️</a>
                     <a href="javascript:copyText('haishangshuma9527')" title="复制微信">💬</a>
@@ -73,7 +73,7 @@
                 <h5>服务</h5>
                 <ul>
                     <li><a href="repair.html">维修服务</a></li>
-                    <li><a href="chip.html">改机服务</a></li>
+                    <li><a href="chip.html">硬破服务</a></li>
             <li><a href="games.html">自选游戏</a></li>
                     <li><a href="shop.html">商城服务</a></li>
                     <li><a href="resources.html">下载中心</a></li>
@@ -99,8 +99,8 @@
             </div>
         </div>
         <div class="foot-bottom">
-            <span>© 2026 海上数码 · Nintendo Switch 主机维修与改机服务</span>
-            <span>主机维修 · 改机服务 · 内存卡 · 系统维护</span>
+            <span>© 2026 海上数码 · Nintendo Switch 主机维修与硬破服务</span>
+            <span>主机维修 · 硬破服务 · 内存卡 · 系统维护</span>
         </div>
     </div>
 </footer>
@@ -143,7 +143,7 @@ document.getElementById('cartIcon').innerHTML = icon('cart');
 const CATS = [
     {k:'all', n:'全部'},
     {k:'repair', n:'主机商品'},
-    {k:'chip', n:'改机服务'},
+    {k:'chip', n:'硬破服务'},
     {k:'card', n:'内存卡'}
 ];
 const PRODUCTS = [
@@ -151,9 +151,9 @@ const PRODUCTS = [
     {id:'host-lite', cat:'repair', name:'Nintendo Switch Lite', desc:'5.5 英寸屏 · HDH-001 · 掌机一体机身，多种配色可选', price:null, old:0, sales:158, stock:6, tag:'', img:'images/dev-lite.webp'},
     {id:'host-oled', cat:'repair', name:'Nintendo Switch OLED', desc:'7 英寸 OLED 屏 · HEG-001 · 64GB 机身存储，底座带 LAN 网口', price:null, old:0, sales:174, stock:4, tag:'hot', img:'images/dev-oled.webp'},
     {id:'host-sw2', cat:'repair', name:'Nintendo Switch 2', desc:'7.9 英寸 1080P 120Hz · 256GB · 支持磁吸 Joy-Con 2', price:null, old:0, sales:96, stock:3, tag:'new', img:'images/dev-switch2.webp'},
-    {id:'chip-std', cat:'chip', name:'改机服务 · 标准版 / 续航版', desc:'全排线方案，支持国行/日版/美版/港版全版本', price:89, old:129, suffix:'起', sales:1286, stock:99, tag:'hot', img:'images/dev-switch.webp'},
-    {id:'chip-lite', cat:'chip', name:'改机服务 · Lite 版', desc:'整机焊接方案，支持全系统版本固件升级维护', price:109, old:159, suffix:'起', sales:842, stock:99, tag:'new', img:'images/dev-lite.webp'},
-    {id:'chip-oled', cat:'chip', name:'改机服务 · OLED 版', desc:'全排线挖孔方案，7 英寸大屏专用施工工艺', price:139, old:199, suffix:'起', sales:1563, stock:99, tag:'hot', img:'images/dev-oled.webp'},
+    {id:'chip-std', cat:'chip', name:'硬破服务 · 标准版 / 续航版', desc:'全排线方案，支持国行/日版/美版/港版全版本', price:89, old:129, suffix:'起', sales:1286, stock:99, tag:'hot', img:'images/dev-switch.webp'},
+    {id:'chip-lite', cat:'chip', name:'硬破服务 · Lite 版', desc:'整机焊接方案，支持全系统版本固件升级维护', price:109, old:159, suffix:'起', sales:842, stock:99, tag:'new', img:'images/dev-lite.webp'},
+    {id:'chip-oled', cat:'chip', name:'硬破服务 · OLED 版', desc:'全排线挖孔方案，7 英寸大屏专用施工工艺', price:139, old:199, suffix:'起', sales:1563, stock:99, tag:'hot', img:'images/dev-oled.webp'},
     {id:'card-128', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 128GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:239, old:299, sales:2140, stock:56, tag:'', img:'images/card-128.webp'},
     {id:'card-256', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 256GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:359, old:429, sales:1876, stock:38, tag:'hot', img:'images/card-256.webp'},
     {id:'card-512', cat:'card', name:'闪迪 A2 V30 U3 红金卡 · 512GB', desc:'本店质保五年，假一罚十，线上线下免费装满', price:659, old:799, sales:934, stock:12, tag:'', img:'images/card-512.webp'}
