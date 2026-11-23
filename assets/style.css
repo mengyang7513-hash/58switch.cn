@@ -1,7 +1,3 @@
-/* ==========================================================
-   海上数码 · 共享样式（浅色专业维修服务风格）
-   主色 #03466e 深蓝 / 强调 #00b6b1 青绿 / 辅助 #def3f2 浅青
-   ========================================================== */
 :root{
     --primary:#03466e;
     --primary-dark:#023a5c;
@@ -34,8 +30,6 @@ body{
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 ul{ list-style:none; }
-
-/* ---------- 布局 ---------- */
 .container{ width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
 .section{ padding:84px 0; }
 .section.soft{ background:var(--soft); }
@@ -52,8 +46,6 @@ ul{ list-style:none; }
 .section.deep .section-title{ color:#fff; }
 .section-desc{ margin-top:14px; font-size:1rem; color:var(--muted); }
 .section.deep .section-desc{ color:rgba(255,255,255,.78); }
-
-/* ---------- 按钮 ---------- */
 .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:9px;
     padding:13px 26px; border-radius:10px; font-size:.94rem; font-weight:700; font-family:inherit;
@@ -70,8 +62,6 @@ ul{ list-style:none; }
 .btn-light:hover{ background:var(--secondary); }
 .btn-block{ width:100%; }
 .btn-sm{ padding:9px 18px; font-size:.85rem; }
-
-/* ---------- 导航 ---------- */
 .navbar{
     position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:1000;
     background:rgba(255,255,255,.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
@@ -109,8 +99,6 @@ ul{ list-style:none; }
 .nav-toggle{ display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:10px;
     background:#fff; cursor:pointer; align-items:center; justify-content:center; color:var(--primary); }
 .nav-toggle svg{ width:20px; height:20px; }
-
-/* ---------- Hero ---------- */
 .hero{ position:relative; padding:96px 0 92px; overflow:hidden;
     background:linear-gradient(160deg,#f2f9fb 0%,#e6f4f4 55%,#def3f2 100%); }
 .hero::after{
@@ -140,14 +128,10 @@ ul{ list-style:none; }
 .hero-list li:first-child{ border-top:none; }
 .hero-list svg{ width:17px; height:17px; color:var(--accent); margin-top:3px; flex-shrink:0; }
 .hero-list b{ color:var(--text); font-weight:700; }
-
-/* ---------- 统计条 ---------- */
 .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
 .stat{ text-align:center; padding:26px 16px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); }
 .stat .num{ font-size:2rem; font-weight:800; color:var(--primary); letter-spacing:-.5px; }
 .stat .lbl{ font-size:.86rem; color:var(--muted); margin-top:4px; }
-
-/* ---------- 通用卡片 ---------- */
 .grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
 .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
@@ -164,8 +148,6 @@ ul{ list-style:none; }
 }
 .icon-circle svg{ width:25px; height:25px; }
 .icon-circle.accent{ background:rgba(0,182,177,.14); color:var(--accent-dark); }
-
-/* 服务卡（带图片） */
 .svc-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; transition:.3s; }
 .svc-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-md); }
 .svc-img{ height:170px; overflow:hidden; background:var(--soft-2); position:relative; }
@@ -178,8 +160,6 @@ ul{ list-style:none; }
 .price{ font-size:1.35rem; font-weight:800; color:var(--primary); }
 .price small{ font-size:.8rem; font-weight:600; }
 .price del{ font-size:.8rem; color:var(--muted-2); margin-left:6px; font-weight:500; }
-
-/* ---------- 机型卡 ---------- */
 .dev-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; transition:.3s; }
 .dev-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-md); }
 .dev-img{ height:158px; overflow:hidden; background:var(--soft-2); position:relative; }
@@ -203,8 +183,6 @@ ul{ list-style:none; }
 .dev-status{ font-size:.72rem; font-weight:700; padding:3px 10px; border-radius:7px; }
 .dev-status.ok{ background:rgba(0,182,177,.12); color:var(--accent-dark); }
 .dev-status.ask{ background:rgba(255,138,76,.14); color:#c2621d; }
-
-/* ---------- 流程（深色区） ---------- */
 .process{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
 .step{ position:relative; }
 .step-no{
@@ -214,8 +192,6 @@ ul{ list-style:none; }
 .step h4{ font-size:1.05rem; font-weight:700; margin-bottom:8px; }
 .step p{ font-size:.9rem; color:rgba(255,255,255,.76); }
 .step-meta{ margin-top:12px; font-size:.78rem; color:rgba(255,255,255,.6); }
-
-/* ---------- 流程（浅色长列表） ---------- */
 .steps-list{ display:flex; flex-direction:column; gap:16px; }
 .step-row{ display:grid; grid-template-columns:58px 1fr 220px; gap:24px; align-items:center;
     background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px 26px; transition:.28s; }
@@ -229,8 +205,6 @@ ul{ list-style:none; }
 .lvl{ display:inline-block; padding:2px 10px; border-radius:7px; font-size:.75rem; font-weight:700; }
 .lvl.e{ background:rgba(0,182,177,.12); color:var(--accent-dark); }
 .lvl.m{ background:rgba(255,138,76,.14); color:#c2621d; }
-
-/* ---------- 评价 ---------- */
 .review{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:26px; height:100%; }
 .review .stars{ color:#f5b301; font-size:.9rem; letter-spacing:2px; margin-bottom:12px; }
 .review p{ font-size:.93rem; color:var(--muted); margin-bottom:18px; }
@@ -239,8 +213,6 @@ ul{ list-style:none; }
     color:#fff; font-weight:700; font-size:.9rem; flex-shrink:0; }
 .reviewer b{ font-size:.9rem; display:block; }
 .reviewer span{ font-size:.78rem; color:var(--muted-2); }
-
-/* ---------- 表单 ---------- */
 .form-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px; }
 .form-card h3{ font-size:1.25rem; font-weight:800; margin-bottom:6px; }
 .form-card .sub{ font-size:.9rem; color:var(--muted); margin-bottom:24px; }
@@ -253,8 +225,6 @@ ul{ list-style:none; }
 .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,182,177,.12); }
 .field textarea{ resize:vertical; min-height:110px; }
 .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-
-/* ---------- 联系信息 ---------- */
 .info-list li{ display:flex; gap:15px; padding:16px 0; border-bottom:1px solid var(--line); }
 .info-list li:last-child{ border-bottom:none; }
 .info-ico{ width:42px; height:42px; border-radius:12px; background:var(--secondary); color:var(--primary);
@@ -262,8 +232,6 @@ ul{ list-style:none; }
 .info-ico svg{ width:20px; height:20px; }
 .info-list .k{ font-size:.78rem; color:var(--muted-2); }
 .info-list .v{ font-size:.95rem; font-weight:600; color:var(--text); }
-
-/* ---------- 商城 ---------- */
 .filters{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:22px; }
 .chip{ padding:9px 20px; border-radius:30px; border:1px solid var(--line-2); background:#fff;
     font-size:.88rem; font-weight:600; color:var(--muted); cursor:pointer; transition:.25s; font-family:inherit; }
@@ -272,8 +240,6 @@ ul{ list-style:none; }
 .shop-bar{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:22px; }
 .shop-bar .count{ font-size:.88rem; color:var(--muted); }
 .shop-bar select{ padding:9px 14px; border:1px solid var(--line-2); border-radius:10px; font-size:.86rem; font-family:inherit; color:var(--text); background:#fff; }
-
-/* ---------- 资源下载 ---------- */
 .res-item{
     display:flex; align-items:center; gap:14px; padding:16px 20px; background:#fff;
     border:1px solid var(--line); border-radius:var(--radius); transition:.25s;
@@ -286,16 +252,12 @@ ul{ list-style:none; }
 .res-name{ font-size:.95rem; font-weight:700; }
 .res-sub{ font-size:.78rem; color:var(--muted-2); font-family:'Courier New',monospace; }
 .res-go{ margin-left:auto; color:var(--accent-dark); font-size:.85rem; font-weight:700; white-space:nowrap; }
-
-/* ---------- 表格 ---------- */
 .table-wrap{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
 table{ width:100%; border-collapse:collapse; font-size:.92rem; }
 thead th{ background:var(--soft); text-align:left; padding:15px 22px; font-size:.84rem; font-weight:700; color:var(--primary); }
 tbody td{ padding:15px 22px; border-top:1px solid var(--line); color:var(--muted); }
 tbody tr:hover td{ background:#fbfdfd; }
 tbody td:first-child{ color:var(--text); font-weight:700; }
-
-/* ---------- 页脚 ---------- */
 .footer{ background:var(--primary-deep); color:rgba(255,255,255,.72); padding:64px 0 0; }
 .foot-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; }
 .footer .brand{ color:#fff; margin-bottom:16px; }
@@ -310,8 +272,6 @@ tbody td:first-child{ color:var(--text); font-weight:700; }
 .socials a:hover{ background:var(--accent); }
 .foot-bottom{ border-top:1px solid rgba(255,255,255,.1); padding:20px 0; font-size:.84rem;
     display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-
-/* ---------- 侧边栏 / 抽屉 ---------- */
 .mask{ position:fixed; inset:0; background:rgba(16,32,44,.45); z-index:1200; opacity:0; pointer-events:none; transition:.3s; }
 .mask.on{ opacity:1; pointer-events:auto; }
 .drawer{ position:fixed; top:0; right:0; height:100%; width:400px; max-width:92vw; background:#fff; z-index:1201;
@@ -337,8 +297,6 @@ tbody td:first-child{ color:var(--text); font-weight:700; }
 .empty{ text-align:center; color:var(--muted-2); padding:70px 0; font-size:.9rem; }
 .total-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:1rem; }
 .total-row b{ font-size:1.45rem; color:var(--primary); }
-
-/* ---------- Toast / 灯箱 ---------- */
 .toast{ position:fixed; left:50%; bottom:34px; transform:translateX(-50%) translateY(80px); z-index:2000;
     background:var(--primary-deep); color:#fff; padding:13px 26px; border-radius:11px; font-size:.9rem; font-weight:600;
     box-shadow:var(--shadow-lg); transition:.4s cubic-bezier(.4,0,.2,1); }
@@ -348,31 +306,21 @@ tbody td:first-child{ color:var(--text); font-weight:700; }
 .lightbox.on{ display:flex; }
 .lightbox img{ max-width:90vw; max-height:86vh; border-radius:14px; }
 .lightbox .x{ position:absolute; top:22px; right:28px; color:#fff; font-size:1.3rem; opacity:.75; }
-
-/* ---------- 内页头图 ---------- */
 .page-hero{ padding:70px 0 54px; background:linear-gradient(160deg,#f2f9fb 0%,#def3f2 100%); border-bottom:1px solid var(--line); }
 .breadcrumb{ font-size:.84rem; color:var(--muted-2); margin-bottom:14px; }
 .breadcrumb a{ color:var(--accent-dark); font-weight:600; }
 .page-hero h1{ font-size:2.35rem; font-weight:800; color:var(--primary-deep); letter-spacing:-.7px; line-height:1.25; }
 .page-hero p{ margin-top:14px; color:var(--muted); max-width:660px; font-size:1.02rem; }
-
-/* ---------- 提示条 ---------- */
 .callout{ display:flex; gap:14px; padding:18px 22px; border-radius:var(--radius);
     background:rgba(0,182,177,.08); border:1px solid rgba(0,182,177,.24); font-size:.9rem; color:var(--muted); }
 .callout b{ color:var(--text); }
 .callout.warn{ background:rgba(255,138,76,.08); border-color:rgba(255,138,76,.26); }
-
-/* ---------- 特性小卡 ---------- */
 .mini-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
 .mini{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; }
 .mini b{ display:block; font-size:.95rem; margin-bottom:4px; }
 .mini span{ font-size:.84rem; color:var(--muted); }
-
-/* ---------- 动画 ---------- */
 [data-reveal]{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
 [data-reveal].in{ opacity:1; transform:none; }
-
-/* ---------- 响应式 ---------- */
 @media (max-width:991px){
     .nav-menu{ display:none; position:absolute; top:var(--nav-h); left:0; right:0; background:#fff;
         flex-direction:column; gap:0; padding:10px 24px 18px; border-bottom:1px solid var(--line); box-shadow:var(--shadow-md); }
@@ -397,14 +345,10 @@ tbody td:first-child{ color:var(--text); font-weight:700; }
     .table-wrap{ overflow-x:auto; }
     table{ min-width:560px; }
 }
-
-/* ---------- 流程（白底版，与页面同色） ---------- */
 .process-sec .step-no{ background:#e2f4f4; border:1px solid #bfe6e6; color:#00b6b1; }
 .process-sec .step h4{ color:var(--text); }
 .process-sec .step p{ color:var(--muted); }
 .process-sec .step-meta{ color:var(--muted-2); }
-
-/* ---------- 双系统界面预览 ---------- */
 .atm-gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; }
 .atm-shot{ margin:0; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
     overflow:hidden; cursor:zoom-in; display:flex; flex-direction:column;
